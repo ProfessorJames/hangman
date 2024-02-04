@@ -1,31 +1,23 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman
 
-Welcome USER_NAME,
+Welcome to the Python CLI Hangman Game! 
+This command-line game is a fun and interactive way to test your vocabulary and word-guessing skills. Challenge yourself or play with friends to see who can guess the hidden word correctly.
+### Deployed website [Hangman](xxx/ 'Hangman')
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Features
 
-## Reminders
+## Existing Features
+- Word Selection: 
+ The game randomly selects a word from a predefined list of words for the player to guess.
+- Guessing: The player can guess letters one by one to reveal the hidden word.
+- Incorrect Guess Tracking: The game keeps track of incorrect guesses and displays a hangman figure as the game progresses.
+- Win/Lose Conditions: The game ends when the player you correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
+- Word Reveal: After the game ends, the hidden word is revealed, and the player is given the option to play again.
+## Future Features
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Data Model
 
-## Creating the Heroku app
+# Testing 
+# Deployment
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+# Credits
