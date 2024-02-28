@@ -67,7 +67,7 @@ def check_guessed_letter_in_word(letter, word, display):
     for i in range(len(word)):
         if word[i] == letter:
             display[i] = letter
-    print(display)
+    print(''.join(display))
     return display
 
 
@@ -80,15 +80,16 @@ def play_game():
     word_length = len(word)
 
     display = ['']
-    for _ in range(word_length):
+    for _ in range(word_length-1):
         display += '_'
 
-    print(display)
+    print(''.join(display))
 
-    # Create function to get user input, validate user input i.e. only one letter, not a digit, keep asking user to enter a letter until letter is inputted.
-    guess = get_letter_input()
+    while True:
+        # Create function to get user input, validate user input i.e. only one letter, not a digit, keep asking user to enter a letter until letter is inputted.
+        guess = get_letter_input()
 
-    # create a function to check letter guessed bu user is in the word and update the display
-    check_guessed_letter_in_word(guess, word, display)
+        # create a function to check letter guessed bu user is in the word and update the display
+        check_guessed_letter_in_word(guess, word, display)
 
 play_game()
