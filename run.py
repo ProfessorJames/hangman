@@ -109,11 +109,10 @@ def play_game():
         # if display == word:
             # print('You guessed the word correctly. You win!')
         if ''.join(display) == word:
-            print('You guessed the word correctly. You win.')
+            print('Congratulations. You guessed the word correctly. You win.')
             game_over = True
-
+     
 play_game()
 
-
-# Funtionality 
-# 3. sort guessed letters and show alphabetically so that it is easier for user to follow which letters have been guessed.
+# functionality
+# edit input so gives message if non letter is entered. could possibly use regex.
