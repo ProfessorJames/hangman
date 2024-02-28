@@ -80,7 +80,7 @@ def play_game():
     
 # set up game variables
     game_over = False
-    lives = 5
+    lives = 3
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
@@ -103,26 +103,24 @@ def play_game():
         guess = get_letter_input(guessed_letters)
         guessed_letters.append(guess)
         
-
         # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
         for i in range(len(word)):
             if word[i] == guess:
               display[i] = guess
         if guess not in word:
             lives -= 1
-            print(f"Incorrect! Attempts remaining: {lives}.")
-
-        print(''.join(display))
-        print(f"Guessed letters: {guessed_letters}")
-
+            if lives > 0:
+                print(f"Incorrect! Attempts remaining: {lives}")
+    
         if lives == 0:
             game_over = True
-            print('Game over. You lose.')
+            print('Incorrect!\nGame over. You lose.')
+        else:
+                print(''.join(display))
+                print(f"Guessed letters: {guessed_letters}")
 
 play_game()
 
 
 # Funtionality 
-# 1. add data input check so that if user has already entered a letter that tehy are asked to select another letter
-# 2. added variable to keep track of lives
 # 3. sort guessed letters and show alphabetically so that it is easier for user to follow which letters have been guessed.
