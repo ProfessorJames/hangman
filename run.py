@@ -15,6 +15,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
+
+# Main game functionality
+
 def select_random_word():
     words = SHEET.worksheet('Words').get_all_values()
     word = random.choice(words)
@@ -31,6 +34,20 @@ def display_welcome_message():
     Win by guessing the word correctly, or lose if the hangman is completed.
     """)
 
+def get_letter_input():
+    """
+    Prompts the user to enter a single letter and returns it in lowercase.
+    A valid input is a single alphabetical character. If the user
+    provides an invalid input (such as multiple characters or non-alphabetical
+    characters), an error message is displayed, and the user is prompted again.
+    """
+    while True:
+        user_input = input("Please eneter a letter: ").lower()
+        if len(user_input) == 1 and user_input.isalpha():
+            return(user_input) 
+        else:
+            print("Please enter only one letter.")
+
 def play_game():
     display_logo()
     display_welcome_message()
@@ -44,5 +61,8 @@ def play_game():
         display += '_'
 
     print(display)
+
+    # Create function to get user input, validate user input i.e. only one letter, not a digit, keep asking user to enter a letter until letter is inputted.
+    get_letter_input()
 
 play_game()
