@@ -110,14 +110,14 @@ def play_game():
               display[i] = guess
         if guess not in word:
             lives -= 1
-            print(f"Incorrect! You have {lives} lives remaining.")
+            print(f"Incorrect! Attempts remaining: {lives}.")
 
         print(''.join(display))
         print(f"Guessed letters: {guessed_letters}")
 
         if lives == 0:
             game_over = True
-            print('Game over')
+            print('Game over. You lose.')
 
 play_game()
 
