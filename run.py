@@ -19,6 +19,11 @@ SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 # Main game functionality
 
 def select_random_word():
+    """
+    This function retrieves all the words from a worksheet named 'Words' in a Google Sheets
+    document accessed via the global variable SHEET. It then selects a random word from
+    the list of words and returns it in lowercase.
+    """
     words = SHEET.worksheet('Words').get_all_values()
     word = random.choice(words)
     return word[0].lower()
@@ -64,5 +69,7 @@ def play_game():
 
     # Create function to get user input, validate user input i.e. only one letter, not a digit, keep asking user to enter a letter until letter is inputted.
     get_letter_input()
+
+    # check if letter is in wor
 
 play_game()
