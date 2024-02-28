@@ -45,6 +45,7 @@ It then randomly selects a word from the retrieved list to be used in the curren
 # Testing 
 
 ## Bugs
+* The number of blanks being displayed initially does not seem to be teh length of the word. Need to investigate and fix.
 
 ### Solved Bugs
 * During development the display was showing one more blank space than there were letters in the word to be guessed. This was solved by updating the range to be one less than the length of the word. 

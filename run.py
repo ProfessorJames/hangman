@@ -94,7 +94,7 @@ def play_game():
 
 # display a blank space for each letter in secret word
     display = ['']
-    for _ in range(word_length-1):
+    for _ in range(word_length):
         display += '_'
     print(''.join(display))
 
