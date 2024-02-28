@@ -32,6 +32,15 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 ## Future Features
 
 ## Data Model
+The data model includes integration with Google Sheets using the Google Drive API and the gspread library in Python.
+Authentication and authorization mechanisms are implemented to securely access the designated Google Spreadsheet. 
+The Hangman game utilizes a designated Google Spreadsheet to store the words used in the game.
+Each word is stored in a separate cell within the spreadsheet.
+The data model includes functionalities to retrieve word data from the Google Spreadsheet programmatically using the gspread library.
+When a new game is started the programme fetches the word data from the spreadsheet.
+For each game session, the data model randomly selects a word from the retrieved list of words.
+It then randomly selects a word from the retrieved list to be used in the current game session.
+
 
 # Testing 
 # Deployment
