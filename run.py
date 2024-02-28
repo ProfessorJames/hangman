@@ -15,7 +15,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
-
 # Main game functionality
 
 def select_random_word():
@@ -61,35 +60,66 @@ def get_letter_input():
         else:
             print("Please enter only one letter.")
 
-def check_guessed_letter_in_word(letter, word, display):
-    """
-    """
-    for i in range(len(word)):
-        if word[i] == letter:
-            display[i] = letter
-    print(''.join(display))
-    return display
+# def check_guessed_letter_in_word(letter, word, display):
+#     """
+#     """
+#     for i in range(len(word)):
+#         if word[i] == letter:
+#             display[i] = letter
+#             print(''.join(display))
+#         else:
+#             num_lives -=1
+#             print(f"Incorrect. You have {num_lives} remaining")
+#     return display
 
 
 def play_game():
+    
+# set up game variables
+    game_over = False
+    lives = 5
+    guessed_letters = []
+    word = select_random_word()
+    word_length = len(word)
+
+# display logo and welcome message
     display_logo()
     display_welcome_message()
 
-    word = select_random_word()
+# print word while developing. Delete before deployment.
     print(word)
-    word_length = len(word)
 
+# display a blank space for each letter in secret word
     display = ['']
     for _ in range(word_length-1):
         display += '_'
-
     print(''.join(display))
 
-    while True:
-        # Create function to get user input, validate user input i.e. only one letter, not a digit, keep asking user to enter a letter until letter is inputted.
+    while not game_over:
+       
         guess = get_letter_input()
+        guessed_letters.append(guess)
+        
 
-        # create a function to check letter guessed bu user is in the word and update the display
-        check_guessed_letter_in_word(guess, word, display)
+        # create a function to check letter guessed by user is in the word and update the display
+        for i in range(len(word)):
+            if word[i] == guess:
+              display[i] = guess
+        if guess not in word:
+            lives -= 1
+            print(f"Incorrect! You have {lives} lives remaining.")
+
+        print(''.join(display))
+        print(f"Guessed letters: {guessed_letters}")
+
+        if lives == 0:
+            game_over = True
+            print('Game over')
 
 play_game()
+
+
+# Funtionality 
+# 1. add data input check so that if user has already entered a letter that tehy are asked to select another letter
+# 2. added variable to keep track of lives
+# 3. 
