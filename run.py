@@ -20,8 +20,29 @@ def select_random_word():
     word = random.choice(words)
     return word[0].lower()
 
-print(logo)
-print("Welcome to Hangman")
+def display_logo():
+    print(logo)
 
-word = select_random_word()
-print(word)
+def display_welcome_message():
+    print("""
+    Welcome to Hangman!!!
+    Guess letters to uncover the secret word.
+    Try to guess the word before the hangman is fully drawn.
+    Win by guessing the word correctly, or lose if the hangman is completed.
+    """)
+
+def play_game():
+    display_logo()
+    display_welcome_message()
+
+    word = select_random_word()
+    print(word)
+    word_length = len(word)
+
+    display = ''
+    for _ in range(word_length):
+        display += '_'
+
+    print(display)
+
+play_game()
