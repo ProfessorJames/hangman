@@ -14,14 +14,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
-# possible_words = SHEET.worksheet('words')
-
-
-# select word
-words = possible_words.get_all_values()
-print(words)
-
-word = random.choice(words)
-print(word[0].lower())
-
 def select_random_word():
+    words = SHEET.worksheet('Words').get_all_values()
+    word = random.choice(words)
+    return word[0].lower()
+
+word = select_random_word()
+print(word)
