@@ -63,19 +63,6 @@ def get_letter_input(letters_guessed):
         else:
             print("Please enter only one letter.")
 
-# def check_guessed_letter_in_word(letter, word, display):
-#     """
-#     """
-#     for i in range(len(word)):
-#         if word[i] == letter:
-#             display[i] = letter
-#             print(''.join(display))
-#         else:
-#             num_lives -=1
-#             print(f"Incorrect. You have {num_lives} remaining")
-#     return display
-
-
 def play_game():
     
 # set up game variables
@@ -93,7 +80,7 @@ def play_game():
     print(word)
 
 # display a blank space for each letter in secret word
-    display = ['']
+    display = []
     for _ in range(word_length):
         display += '_'
     print(''.join(display))
