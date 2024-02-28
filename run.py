@@ -106,6 +106,12 @@ def play_game():
                 print(''.join(display))
                 print(f"Guessed letters: {guessed_letters}")
 
+        # if display == word:
+            # print('You guessed the word correctly. You win!')
+        if ''.join(display) == word:
+            print('You guessed the word correctly. You win.')
+            game_over = True
+
 play_game()
 
 
