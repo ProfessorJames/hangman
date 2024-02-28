@@ -3,6 +3,7 @@ from google.oauth2.service_account import Credentials
 
 import random
 from logo import logo
+from graphics import graphic
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
