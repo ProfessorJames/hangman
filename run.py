@@ -46,7 +46,7 @@ def display_welcome_message():
     Win by guessing the word correctly, or lose if the hangman is completed.
     """)
 
-def get_letter_input():
+def get_letter_input(letters_guessed):
     """
     Prompts the user to enter a single letter and returns it in lowercase.
     A valid input is a single alphabetical character. If the user
@@ -56,7 +56,10 @@ def get_letter_input():
     while True:
         user_input = input("Please enter a letter: ").lower()
         if len(user_input) == 1 and user_input.isalpha():
-            return(user_input) 
+           if user_input in letters_guessed:
+                print("You have picked that letter already. Please choose a new letter.")
+           else:
+                return user_input
         else:
             print("Please enter only one letter.")
 
@@ -97,11 +100,11 @@ def play_game():
 
     while not game_over:
        
-        guess = get_letter_input()
+        guess = get_letter_input(guessed_letters)
         guessed_letters.append(guess)
         
 
-        # create a function to check letter guessed by user is in the word and update the display
+        # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
         for i in range(len(word)):
             if word[i] == guess:
               display[i] = guess
@@ -122,4 +125,4 @@ play_game()
 # Funtionality 
 # 1. add data input check so that if user has already entered a letter that tehy are asked to select another letter
 # 2. added variable to keep track of lives
-# 3. 
+# 3. sort guessed letters and show alphabetically so that it is easier for user to follow which letters have been guessed.
