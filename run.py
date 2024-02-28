@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 
 import random
 from logo import logo
-from graphics import graphic
+from graphics import GRAPHICS
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -36,15 +36,15 @@ def display_logo():
 
 def display_welcome_message():
     """
-    This function prints a welcome message for the Hangman game, providing players
-    with instructions on how to play. It explains the objective of the game, which
-    is to guess letters to uncover the secret word before the hangman is fully drawn.
+This function prints a welcome message for the Hangman game, providing players
+with instructions on how to play. It explains the objective of the game, which
+is to guess letters to uncover the secret word before the hangman is fully drawn.
     """
     print("""
-    Welcome to Hangman!!!
-    Guess letters to uncover the secret word.
-    Try to guess the word before the hangman is fully drawn.
-    Win by guessing the word correctly, or lose if the hangman is completed.
+Welcome to Hangman!!!
+Guess letters to uncover the secret word.
+Try to guess the word before the hangman is fully drawn.
+Win by guessing the word correctly, or lose if the hangman is completed.
     """)
 
 def get_letter_input(letters_guessed):
@@ -68,7 +68,8 @@ def play_game():
     
 # set up game variables
     game_over = False
-    lives = 3
+    lives = 6
+    counter = 0
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
@@ -97,18 +98,19 @@ def play_game():
               display[i] = guess
         if guess not in word:
             lives -= 1
+            counter += 1
             if lives > 0:
+                print(GRAPHICS[counter])
                 print(f"Incorrect! Attempts remaining: {lives}")
     
         if lives == 0:
+            print(GRAPHICS[counter])
             game_over = True
             print('Incorrect!\nGame over. You lose.')
         else:
                 print(''.join(display))
                 print(f"Guessed letters: {guessed_letters}")
 
-        # if display == word:
-            # print('You guessed the word correctly. You win!')
         if ''.join(display) == word:
             print('Congratulations. You guessed the word correctly. You win.')
             game_over = True
