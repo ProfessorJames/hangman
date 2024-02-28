@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 import random
+from logo import logo
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,6 +19,9 @@ def select_random_word():
     words = SHEET.worksheet('Words').get_all_values()
     word = random.choice(words)
     return word[0].lower()
+
+print(logo)
+print("Welcome to Hangman")
 
 word = select_random_word()
 print(word)
