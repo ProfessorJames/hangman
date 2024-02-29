@@ -7,6 +7,9 @@ time.sleep(2)
 os.system('clear')
 
 
+def pause(t):
+    time.sleep(t)
+
 def ask_to_play_game():
     """
     Function that asks the user if they want to play a game of Hangman. 

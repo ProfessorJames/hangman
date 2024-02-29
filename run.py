@@ -17,6 +17,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
+# utility functions
+def pause(t):
+    time.sleep(t)
+
 # Main game functionality
 
 def select_random_word():
@@ -136,13 +140,12 @@ def play_game():
 display_logo()
 display_welcome_message()
 
-# while input("Play Hangman? Type 'y' or 'n': ") == 'y':
-#     os.system('clear')
-#     play_game()
 
 while ask_to_play_game():
-    os.system('clear')
     play_game()
+    os.system('clear')
+    display_logo()
+    display_welcome_message()
 
 
 # functionality
