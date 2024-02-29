@@ -4,7 +4,7 @@ from google.oauth2.service_account import Credentials
 import random
 import os
 import time
-from logo import green_logo, red_logo
+from logo import green_logo
 from graphics import GRAPHICS
 from Colours import Colours
 
@@ -45,11 +45,11 @@ def select_random_word():
     word = random.choice(words)
     return word[0].lower()
 
-def display_logo():
+def display_logo(color_logo):
     """
     This function prints the logo stored in the variable `logo`. 
     """
-    print(red_logo)
+    print(color_logo)
 
 def display_welcome_message():
     """
@@ -147,15 +147,16 @@ def play_game():
             game_over = True
 
 # display logo and welcome message
-display_logo()
+display_logo(green_logo)
 display_welcome_message()
 
 pause(2)
 
 while user_wants_to_play_game():
     play_game()
+    pause(2)
     os.system('clear')
-    display_logo()
+    display_logo(green_logo)
     display_welcome_message()
 
 

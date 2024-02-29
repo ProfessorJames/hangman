@@ -10,4 +10,3 @@ logo = """
 """
 
 green_logo = Colours.colourize(logo, 'green')
-red_logo = Colours.colourize(logo, 'red')
