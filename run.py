@@ -3,8 +3,10 @@ from google.oauth2.service_account import Credentials
 
 import random
 import os
-from logo import logo
+import time
+from logo import green_logo, red_logo
 from graphics import GRAPHICS
+from Colours import Colours
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,6 +21,16 @@ SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
 # utility functions
 def pause(t):
+    '''
+    Pauses the program execution for a specified duration in seconds.
+    
+    Parameters:
+        t (float or int): The duration to pause the program in seconds.
+
+    Example:
+        >>> pause(2)
+        # Pauses the program for 2 seconds.
+    '''
     time.sleep(t)
 
 # Main game functionality
@@ -37,7 +49,7 @@ def display_logo():
     """
     This function prints the logo stored in the variable `logo`. 
     """
-    print(logo)
+    print(red_logo)
 
 def display_welcome_message():
     """
@@ -82,6 +94,7 @@ def user_wants_to_play_game():
     """
     while True:
         user_input = input("Do you want to play Hangman? (Enter 'y' for Yes, or 'n' for No): ").lower()
+        # pause(2)
         if user_input == 'y':
             return True
         elif user_input =='n':
@@ -98,9 +111,6 @@ def play_game():
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
-
-# print word while developing. Delete before deployment.
-    # print(word)
 
 # display a blank space for each letter in secret word
     display = []
@@ -140,6 +150,7 @@ def play_game():
 display_logo()
 display_welcome_message()
 
+pause(2)
 
 while user_wants_to_play_game():
     play_game()
