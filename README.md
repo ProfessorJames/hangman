@@ -46,6 +46,8 @@ It then randomly selects a word from the retrieved list to be used in the curren
 
 ## Bugs
 * The number of blanks being displayed initially does not seem to be teh length of the word. Need to investigate and fix.
+* There is an issue with the graphics being displayed. Sometimes getting the following error: File "run.py", line 138, in play_game
+    print(GRAPHICS[counter]) IndexError: list index out of range. Need to fix. Could be to do with counter variable incrementing if the same letter is picked a number of times. Print counter to console to track.
 
 ### Solved Bugs
 * During development the display was showing one more blank space than there were letters in the word to be guessed. This was solved by updating the range to be one less than the length of the word. 
