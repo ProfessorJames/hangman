@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 import random
+import os
 from logo import logo
 from graphics import GRAPHICS
 
@@ -61,17 +62,31 @@ def get_letter_input(letters_guessed):
     characters), an error message is displayed, and the user is prompted again.
     """
     while True:
-        user_input = input("Please enter a letter: ").lower()
+        user_input = input("Guess a letter: ").lower()
         if len(user_input) == 1 and user_input.isalpha():
            if user_input in letters_guessed:
-                print("You have picked that letter already. Please choose a new letter.")
+                print("You have picked that letter already. Guess a new letter.")
            else:
                 return user_input
         else:
-            print("Please enter only one letter.")
+            print("You can only guess one letter at a time.")
 
-def play_game():
-    
+def ask_to_play_game():
+    """
+    Function that asks the user if they want to play a game of Hangman. 
+    User enters 'y' if they want to play, or enters 'n' otherwise.
+    """
+    while True:
+        user_input = input("Do you want to play Hangman? (Enter 'y' for Yes, or 'n' for No): ").lower()
+        if user_input == 'y':
+            return True
+        elif user_input =='n':
+            print('Goodbye.')
+            return False
+        else:
+            print("Invalid input. Please enter 'y' for yes or 'n' for no.")
+
+def play_game(): 
 # set up game variables
     game_over = False
     lives = 6
@@ -79,10 +94,6 @@ def play_game():
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
-
-# display logo and welcome message
-    display_logo()
-    display_welcome_message()
 
 # print word while developing. Delete before deployment.
     # print(word)
@@ -120,8 +131,21 @@ def play_game():
         if ''.join(display) == word:
             print('Congratulations. You guessed the word correctly. You win.')
             game_over = True
-     
-play_game()
+
+# display logo and welcome message
+display_logo()
+display_welcome_message()
+
+# while input("Play Hangman? Type 'y' or 'n': ") == 'y':
+#     os.system('clear')
+#     play_game()
+
+while ask_to_play_game():
+    os.system('clear')
+    play_game()
+
 
 # functionality
 # edit input so gives message if non letter is entered. could possibly use regex.
+# add function to ask user if they want to play again?
+
