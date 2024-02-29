@@ -75,7 +75,7 @@ def get_letter_input(letters_guessed):
         else:
             print("You can only guess one letter at a time.")
 
-def ask_to_play_game():
+def user_wants_to_play_game():
     """
     Function that asks the user if they want to play a game of Hangman. 
     User enters 'y' if they want to play, or enters 'n' otherwise.
@@ -141,7 +141,7 @@ display_logo()
 display_welcome_message()
 
 
-while ask_to_play_game():
+while user_wants_to_play_game():
     play_game()
     os.system('clear')
     display_logo()
