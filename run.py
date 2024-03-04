@@ -20,18 +20,11 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
 # utility functions
-def pause(t):
-    '''
-    Pauses the program execution for a specified duration in seconds.
-    
-    Parameters:
-        t (float or int): The duration to pause the program in seconds.
-
-    Example:
-        >>> pause(2)
-        # Pauses the program for 2 seconds.
-    '''
-    time.sleep(t)
+def pause(seconds):
+    """
+    Pauses the program execution for a specified duration in seconds.   
+    """
+    time.sleep(seconds)
 
 # Main game functionality
 
@@ -107,7 +100,7 @@ def play_game():
 # set up game variables
     game_over = False
     lives = 6
-    counter = 0
+    # counter = 0
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
@@ -128,14 +121,12 @@ def play_game():
             if word[i] == guess:
               display[i] = guess
         if guess not in word:
+            print(GRAPHICS[-lives])
             lives -= 1
-            counter += 1
-            if lives > 0:
-                print(GRAPHICS[counter])
-                print(f"Incorrect! Attempts remaining: {lives}")
-    
+            print(f"Incorrect! Attempts remaining: {lives}")
+           
         if lives == 0:
-            print(GRAPHICS[counter])
+            print(GRAPHICS[-lives])
             game_over = True
             print('Incorrect!\nGame over. You lose.')
         else:
