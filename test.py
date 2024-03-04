@@ -113,16 +113,14 @@ def user_wants_to_play_game():
 # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
         ## function to check if guess_in_word
 
+
 #Create display function
-def create_word_display(len_word):
-    """
-    Creates a display for a word, where each character is represented by an underscore '_'.
-    """
-    word_display = []
-    for _ in range(len_word):
-        word_display += '_'
-    print(''.join(word_display))
-    return word_display
+def create_display(word_length):
+    display = []
+    for _ in range(word_length):
+        display += '_'
+    print(''.join(display))
+    return display
 
 def play_game(): 
 # set up game variables
@@ -132,12 +130,12 @@ def play_game():
     word = select_random_word()
     word_length = len(word)
 
-# # display a blank space for each letter in secret word
-#     display = []
-#     for _ in range(word_length):
-#         display += '_'
-#     print(''.join(display))
-    display = create_word_display(word_length)
+# display a blank space for each letter in secret word
+    # display = []
+    # for _ in range(word_length):
+    #     display += '_'
+    # print(''.join(display))
+    create_display(word_length)
 
     while not game_over:
        
@@ -146,7 +144,9 @@ def play_game():
         
         # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
         ## function to check if guess_in_word
-        for i in range(len(word)):
+        if guess in word:
+
+            for i in range(len(word)):
             if word[i] == guess:
               display[i] = guess
         ## function to check if guess not in word
