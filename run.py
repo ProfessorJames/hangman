@@ -28,16 +28,28 @@ def pause(seconds):
 
 # Main game functionality
 
-# update this function so that i has try except for api call.
+# update this function so that it has try except for api call.
 def select_random_word():
     """
     This function retrieves all the words from a worksheet named 'Words' in a Google Sheets
     document accessed via the global variable SHEET. It then selects a random word from
     the list of words and returns it in lowercase.
     """
-    words = SHEET.worksheet('Words').get_all_values()
-    word = random.choice(words)
-    return word[0].lower()
+    try:
+        words = SHEET.worksheet('Words').get_all_values()
+        if words is None:
+            raise ValueError
+        word = random.choice(words)
+        return word[0].lower()
+    except gspread.exceptions.APIError as e:
+        raise gspread.exceptions.APIError(f"Error accessing Google Sheets API: {e}")
+        return None
+    except ValueError as ve:
+        print(f"ValueError: {ve}")
+        return None
+    except Exception as ex:
+        print(f"An unexpected error occurred: {ex}")
+        return None    
 
 def display_logo(color_logo):
     """
