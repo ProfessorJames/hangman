@@ -28,6 +28,7 @@ def pause(seconds):
 
 # Main game functionality
 
+# update this function so that i has try except for api call.
 def select_random_word():
     """
     This function retrieves all the words from a worksheet named 'Words' in a Google Sheets
@@ -117,14 +118,17 @@ def play_game():
         guessed_letters.append(guess)
         
         # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
+        ## function to check if guess_in_word
         for i in range(len(word)):
             if word[i] == guess:
               display[i] = guess
+        ## function to check if guess not in word
         if guess not in word:
             print(GRAPHICS[-lives])
             lives -= 1
             print(f"Incorrect! Attempts remaining: {lives}")
-           
+        
+        ### function to check if lives are not 0
         if lives == 0:
             print(GRAPHICS[-lives])
             game_over = True
@@ -133,6 +137,7 @@ def play_game():
                 print(''.join(display))
                 print(f"Guessed letters: {guessed_letters}")
 
+        ### function to check if user has guessed word correctly
         if ''.join(display) == word:
             print('Congratulations. You guessed the word correctly. You win.')
             game_over = True
