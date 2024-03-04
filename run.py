@@ -19,16 +19,18 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-pp3')
 
-# utility functions
 def pause(seconds):
     """
     Pauses the program execution for a specified duration in seconds.   
     """
     time.sleep(seconds)
 
-# Main game functionality
+def clear_console():
+    """
+    Clears the console screen.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-# update this function so that it has try except for api call.
 def select_random_word():
     """
     This function retrieves all the words from a worksheet named 'Words' in a Google Sheets
@@ -109,11 +111,13 @@ def user_wants_to_play_game():
         else:
             print("Invalid input. Please enter 'y' for yes or 'n' for no.")
 
+# create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
+        ## function to check if guess_in_word
+
 def play_game(): 
 # set up game variables
     game_over = False
     lives = 6
-    # counter = 0
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
@@ -163,12 +167,7 @@ pause(2)
 while user_wants_to_play_game():
     play_game()
     pause(2)
-    os.system('clear')
+    # clear_console()
     display_logo(green_logo)
     display_welcome_message()
-
-
-# functionality
-# edit input so gives message if non letter is entered. could possibly use regex.
-# add function to ask user if they want to play again?
 
