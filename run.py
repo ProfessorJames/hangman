@@ -124,6 +124,25 @@ def create_word_display(len_word):
     print(''.join(word_display))
     return word_display
 
+def update_display(word, guess, display):
+    """
+    Updates the display if the guessed letter is in the word.
+    """
+    for i in range(len(word)):
+        if word[i] == guess:
+            display[i] = guess
+
+def incorrect_guess():
+        print(GRAPHICS[-lives])
+        lives -= 1
+        print(f"Incorrect! Attempts remaining: {lives}")
+
+def display_guessed_letters(guessed_letters_list):
+    """
+    Displays the letters guessed by the user.
+    """
+    print("Guessed letters:", ", ".join(guessed_letters_list))
+
 def play_game(): 
 # set up game variables
     game_over = False
@@ -131,12 +150,6 @@ def play_game():
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
-
-# # display a blank space for each letter in secret word
-#     display = []
-#     for _ in range(word_length):
-#         display += '_'
-#     print(''.join(display))
     display = create_word_display(word_length)
 
     while not game_over:
@@ -144,13 +157,15 @@ def play_game():
         guess = get_letter_input(guessed_letters)
         guessed_letters.append(guess)
         
-        # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
-        ## function to check if guess_in_word
-        for i in range(len(word)):
-            if word[i] == guess:
-              display[i] = guess
-        ## function to check if guess not in word
-        if guess not in word:
+        if guess in word:
+            update_display(word, guess, display)
+              ## function to check if guess not in word
+        elif guess not in word:
+            if lives == 0:
+                print(GRAPHICS[-lives])
+                game_over = True
+                print('Incorrect!\nGame over. You lose.')
+            # check livescall incorrect_guess()
             print(GRAPHICS[-lives])
             lives -= 1
             print(f"Incorrect! Attempts remaining: {lives}")
@@ -161,8 +176,8 @@ def play_game():
             game_over = True
             print('Incorrect!\nGame over. You lose.')
         else:
-                print(''.join(display))
-                print(f"Guessed letters: {guessed_letters}")
+            print(''.join(display))
+            display_guessed_letters(guessed_letters)
 
         ### function to check if user has guessed word correctly
         if ''.join(display) == word:
