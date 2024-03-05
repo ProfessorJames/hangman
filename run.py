@@ -111,10 +111,6 @@ def user_wants_to_play_game():
         else:
             print("Invalid input. Please enter 'y' for yes or 'n' for no.")
 
-# create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
-        ## function to check if guess_in_word
-
-#Create display function
 def create_word_display(len_word):
     """
     Creates a display for a word, where each character is represented by an underscore '_'.
@@ -141,10 +137,14 @@ def display_guessed_letters(guessed_letters_list):
     print("Guessed letters:", ", ".join(guessed_letters_list))
 
 def handle_incorrect_guess(num_lives, graphics):
-    num_lives -= 1
-    print(graphics[-num_lives])
-    print(f"Incorrect! Attempts remaining: {num_lives}")
-    return num_lives
+    if num_lives > 1:
+        print(graphics[-num_lives])
+        num_lives -= 1
+        print(f"Incorrect! Attempts remaining: {num_lives}")
+        return num_lives
+    else:
+        num_lives -= 1
+        return num_lives
 
 def check_if_player_wins(game_display, game_word):
     if ''.join(game_display) == game_word:
@@ -154,7 +154,7 @@ def check_if_player_wins(game_display, game_word):
 
 def check_if_player_loses(num_lives, graphics):
     if num_lives == 0:
-        print(graphics[-num_lives])
+        print(graphics[-1])
         print('Incorrect!\nGame over. You lose.')
         return True
     return False
@@ -176,12 +176,15 @@ def play_game():
               
         if guess in word:
             update_word_display(word, guess, display)
-            game_over = check_if_player_wins(display, word)
         else:
             lives = handle_incorrect_guess(lives, GRAPHICS)
         
-        game_over = check_if_player_loses(lives, GRAPHICS)
-        display_guessed_letters(guessed_letters)
+        if check_if_player_wins(display, word):
+            game_over = True
+        elif check_if_player_loses(lives, GRAPHICS):
+            game_over = True
+        else:
+            display_guessed_letters(guessed_letters)
 
 # display logo and welcome message
 display_logo(green_logo)
