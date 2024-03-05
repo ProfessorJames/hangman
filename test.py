@@ -113,14 +113,41 @@ def user_wants_to_play_game():
 # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
         ## function to check if guess_in_word
 
-
 #Create display function
-def create_display(word_length):
-    display = []
-    for _ in range(word_length):
-        display += '_'
-    print(''.join(display))
-    return display
+def create_word_display(len_word):
+    """
+    Creates a display for a word, where each character is represented by an underscore '_'.
+    """
+    word_display = []
+    for _ in range(len_word):
+        word_display += '_'
+    print(''.join(word_display))
+    return word_display
+
+def update_display(word, guess, display):
+    """
+    Updates the display if the guessed letter is in the word.
+    """
+    for i in range(len(word)):
+        if word[i] == guess:
+            display[i] = guess
+
+def incorrect_guess():
+        print(GRAPHICS[-lives])
+        lives -= 1
+        print(f"Incorrect! Attempts remaining: {lives}")
+
+def display_guessed_letters(guessed_letters_list):
+    """
+    Displays the letters guessed by the user.
+    """
+    print("Guessed letters:", ", ".join(guessed_letters_list))
+
+def handle_incorrect_guess(num_lives, graphics):
+    num_lives -= 1
+    print(graphics[-num_lives])
+    print(f"Incorrect! Attempts remaining: {num_lives}")
+    return num_lives
 
 def play_game(): 
 # set up game variables
@@ -129,45 +156,21 @@ def play_game():
     guessed_letters = []
     word = select_random_word()
     word_length = len(word)
-
-# display a blank space for each letter in secret word
-    # display = []
-    # for _ in range(word_length):
-    #     display += '_'
-    # print(''.join(display))
-    create_display(word_length)
+    display = create_word_display(word_length)
 
     while not game_over:
        
         guess = get_letter_input(guessed_letters)
         guessed_letters.append(guess)
         
-        # create a function to check letter guessed by user is in the word and update the display? Shoudl this be refactored??
-        ## function to check if guess_in_word
         if guess in word:
-
-            for i in range(len(word)):
-            if word[i] == guess:
-              display[i] = guess
-        ## function to check if guess not in word
-        if guess not in word:
-            print(GRAPHICS[-lives])
-            lives -= 1
-            print(f"Incorrect! Attempts remaining: {lives}")
-        
-        ### function to check if lives are not 0
-        if lives == 0:
-            print(GRAPHICS[-lives])
-            game_over = True
-            print('Incorrect!\nGame over. You lose.')
+            update_display(word, guess, display)
         else:
-                print(''.join(display))
-                print(f"Guessed letters: {guessed_letters}")
+            lives = handle_incorrect_guess(lives, GRAPHICS)
+        
+        game_over = check_game_over()
 
-        ### function to check if user has guessed word correctly
-        if ''.join(display) == word:
-            print('Congratulations. You guessed the word correctly. You win.')
-            game_over = True
+        
 
 # display logo and welcome message
 display_logo(green_logo)

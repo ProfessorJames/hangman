@@ -132,16 +132,29 @@ def update_display(word, guess, display):
         if word[i] == guess:
             display[i] = guess
 
-def incorrect_guess():
-        print(GRAPHICS[-lives])
-        lives -= 1
-        print(f"Incorrect! Attempts remaining: {lives}")
+# def incorrect_guess():
+#         print(GRAPHICS[-lives])
+#         lives -= 1
+#         print(f"Incorrect! Attempts remaining: {lives}")
 
 def display_guessed_letters(guessed_letters_list):
     """
     Displays the letters guessed by the user.
     """
     print("Guessed letters:", ", ".join(guessed_letters_list))
+
+def handle_incorrect_guess(num_lives, graphics):
+    num_lives -= 1
+    print(graphics[-num_lives])
+    print(f"Incorrect! Attempts remaining: {num_lives}")
+    return num_lives
+
+def check_if_player_loses(num_lives, graphics):
+    if num_lives == 0:
+        print(graphics[-num_lives])
+        print('Incorrect!\nGame over. You lose.')
+        return True
+    return False
 
 def play_game(): 
 # set up game variables
@@ -156,33 +169,13 @@ def play_game():
        
         guess = get_letter_input(guessed_letters)
         guessed_letters.append(guess)
-        
+              
         if guess in word:
             update_display(word, guess, display)
-              ## function to check if guess not in word
-        elif guess not in word:
-            if lives == 0:
-                print(GRAPHICS[-lives])
-                game_over = True
-                print('Incorrect!\nGame over. You lose.')
-            # check livescall incorrect_guess()
-            print(GRAPHICS[-lives])
-            lives -= 1
-            print(f"Incorrect! Attempts remaining: {lives}")
-        
-        ### function to check if lives are not 0
-        if lives == 0:
-            print(GRAPHICS[-lives])
-            game_over = True
-            print('Incorrect!\nGame over. You lose.')
         else:
-            print(''.join(display))
-            display_guessed_letters(guessed_letters)
-
-        ### function to check if user has guessed word correctly
-        if ''.join(display) == word:
-            print('Congratulations. You guessed the word correctly. You win.')
-            game_over = True
+            lives = handle_incorrect_guess(lives, GRAPHICS)
+        
+        game_over = check_if_player_loses(lives, GRAPHICS)
 
 # display logo and welcome message
 display_logo(green_logo)
