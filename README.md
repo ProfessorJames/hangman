@@ -45,9 +45,10 @@ It then randomly selects a word from the retrieved list to be used in the curren
 # Testing 
 
 ## Bugs
-* The number of blanks being displayed initially does not seem to be teh length of the word. Need to investigate and fix.
+* The number of blanks being displayed initially does not seem to be the length of the word. Need to investigate and fix.
 * There is an issue with the graphics being displayed. Sometimes getting the following error: File "run.py", line 138, in play_game
-    print(GRAPHICS[counter]) IndexError: list index out of range. Need to fix. Could be to do with counter variable incrementing if the same letter is picked a number of times. Print counter to console to track.
+    print(GRAPHICS[counter]) IndexError: list index out of range. Need to fix. Could be to do with counter variable incrementing if the same letter is picked a number of times. Print counter to console to track. Code was refactored to so that it does not need a counter variable. The counter variable was causing issues when a player selected a letter that tehy had already selected.
+* There was an issue with the update check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic will display.
 
 ### Solved Bugs
 * During development the display was showing one more blank space than there were letters in the word to be guessed. This was solved by updating the range to be one less than the length of the word. 
