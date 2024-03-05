@@ -52,7 +52,7 @@ It then randomly selects a word from the retrieved list to be used in the curren
 
 ### Solved Bugs
 * During development the display was showing one more blank space than there were letters in the word to be guessed. This was solved by updating the range to be one less than the length of the word. 
-* During development it was noticed a user could enter the same letter more than once. TODO. update input function so that letter can only be added bu user once.
+* During development it was noticed a user could enter the same letter more than once. TODO. update input function so that letter can only be added by user once.
 
 # Deployment
 

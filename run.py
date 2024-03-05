@@ -136,7 +136,7 @@ def display_guessed_letters(guessed_letters_list):
     """
     print("Guessed letters:", ", ".join(guessed_letters_list))
 
-def handle_incorrect_guess(num_lives, graphics):
+def handle_incorrect_guess(num_lives, graphics, word_display):
     if num_lives > 1:
         print(graphics[-num_lives])
         num_lives -= 1
@@ -177,8 +177,8 @@ def play_game():
         if guess in word:
             update_word_display(word, guess, display)
         else:
-            lives = handle_incorrect_guess(lives, GRAPHICS)
-        
+            lives = handle_incorrect_guess(lives, GRAPHICS, display)
+            update_word_display(word, guess, display)
         if check_if_player_wins(display, word):
             game_over = True
         elif check_if_player_loses(lives, GRAPHICS):
