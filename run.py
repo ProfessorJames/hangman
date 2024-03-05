@@ -124,13 +124,14 @@ def create_word_display(len_word):
     print(''.join(word_display))
     return word_display
 
-def update_display(word, guess, display):
+def update_display(game_word, user_guess, word_display):
     """
     Updates the display if the guessed letter is in the word.
     """
-    for i in range(len(word)):
-        if word[i] == guess:
-            display[i] = guess
+    for i in range(len(game_word)):
+        if game_word[i] == user_guess:
+            word_display[i] = user_guess
+    print(''.join(word_display))
 
 # def incorrect_guess():
 #         print(GRAPHICS[-lives])
@@ -149,6 +150,13 @@ def handle_incorrect_guess(num_lives, graphics):
     print(f"Incorrect! Attempts remaining: {num_lives}")
     return num_lives
 
+def check_if_player_wins(game_display, game_word):
+    if ''.join(game_display) == game_word:
+            print('Congratulations. You guessed the word correctly. You win.')
+            return True
+    return False
+
+
 def check_if_player_loses(num_lives, graphics):
     if num_lives == 0:
         print(graphics[-num_lives])
@@ -165,6 +173,7 @@ def play_game():
     word_length = len(word)
     display = create_word_display(word_length)
 
+    print(word)
     while not game_over:
        
         guess = get_letter_input(guessed_letters)
@@ -172,10 +181,12 @@ def play_game():
               
         if guess in word:
             update_display(word, guess, display)
+            game_over = check_if_player_wins(display, word)
         else:
             lives = handle_incorrect_guess(lives, GRAPHICS)
         
         game_over = check_if_player_loses(lives, GRAPHICS)
+        display_guessed_letters(guessed_letters)
 
 # display logo and welcome message
 display_logo(green_logo)
