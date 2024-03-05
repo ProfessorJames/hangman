@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 import random
+import re
 import os
 import time
 from logo import green_logo
@@ -87,13 +88,13 @@ def get_letter_input(letters_guessed):
     """
     while True:
         user_input = input("Guess a letter: ").lower()
-        if len(user_input) == 1 and user_input.isalpha():
-           if user_input in letters_guessed:
+        if re.match("^[a-zA-Z]$", user_input):
+            if user_input in letters_guessed:
                 print("You have picked that letter already. Guess a new letter.")
-           else:
+            else:
                 return user_input
         else:
-            print("You can only guess one letter at a time.")
+            print("Invalid input. Please enter a single letter.")
 
 def user_wants_to_play_game():
     """
@@ -124,7 +125,7 @@ def create_word_display(len_word):
     print(''.join(word_display))
     return word_display
 
-def update_display(game_word, user_guess, word_display):
+def update_word_display(game_word, user_guess, word_display):
     """
     Updates the display if the guessed letter is in the word.
     """
@@ -132,11 +133,6 @@ def update_display(game_word, user_guess, word_display):
         if game_word[i] == user_guess:
             word_display[i] = user_guess
     print(''.join(word_display))
-
-# def incorrect_guess():
-#         print(GRAPHICS[-lives])
-#         lives -= 1
-#         print(f"Incorrect! Attempts remaining: {lives}")
 
 def display_guessed_letters(guessed_letters_list):
     """
@@ -155,7 +151,6 @@ def check_if_player_wins(game_display, game_word):
             print('Congratulations. You guessed the word correctly. You win.')
             return True
     return False
-
 
 def check_if_player_loses(num_lives, graphics):
     if num_lives == 0:
@@ -180,7 +175,7 @@ def play_game():
         guessed_letters.append(guess)
               
         if guess in word:
-            update_display(word, guess, display)
+            update_word_display(word, guess, display)
             game_over = check_if_player_wins(display, word)
         else:
             lives = handle_incorrect_guess(lives, GRAPHICS)

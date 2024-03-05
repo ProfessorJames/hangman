@@ -56,3 +56,5 @@ It then randomly selects a word from the retrieved list to be used in the curren
 # Deployment
 
 # Credits
+
+For regex pattern to identify only single character entered by user, https://bobbyhadz.com/blog/python-input-only-accept-one-character
