@@ -27,17 +27,17 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 * When the game loads the player sees the Hangman logo. The logo has been created using ascii art, a welcome message and instructions on how to play the game are displayed.
 * The user is asked if they want to play Hangman and prompted to enter 'y' for Yes or 'n' for No.
 
-![welcome screen](assets/images/welcome_screen.png)
+![welcome screen](docs/images/welcome_screen.png)
 
 ### Input validation
 * The player input is validated. If the user does not enter either 'y' or 'n' they are prompted to enter a correct oprion.
 
-![welcome screen validation](assets/images/welcome_validation.png)
+![welcome screen validation](docs/images/welcome_validation.png)
 
 ### User selects 'n'
 * If the user enters 'n' the game ends and a goodbye message is printed to the screen.
 
-![welcome screen goodbye](assets/images/welcome_goodbye.png)
+![welcome screen goodbye](docs/images/welcome_goodbye.png)
 
 ### User selects 'y'
 * If the user eneters 'y' the game begins. 
@@ -45,7 +45,7 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 * The programme randomly selects a word from a predefined list of words for the player to guess. 
 * The programmes displays a blank space for each letter in the word (e.g. '________').
 
-![welcome screen yes](assets/images/welcome_yes.png)
+![welcome screen yes](docs/images/welcome_yes.png)
 
 ### Guessing 
 * The player can guess letters one by one to reveal the hidden word.
@@ -56,22 +56,22 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 * The letters that the user has guessed are displayed
  on the screen.
 
-![guess validation](assets/images/guess_validation.png)
+![guess validation](docs/images/guess_validation.png)
 
 ## Incorrect Guess Tracking: 
 * The game keeps track of incorrect guesses and displays a hangman figure using ASCII art as the game progresses.
 * The player has 6 lives when the game starts. Each time a player guesses incorrectly they lose a life and the hangman art is updated and displayed.
 
 ### Incorrect Guess One
-![incorrect guess one](assets/images/incorrect_guess1.png)
+![incorrect guess one](docs/images/incorrect_guess1.png)
 ### Incorrect Guess Two
-![incorrect guess two](assets/images/incorrect_guess2.png)
+![incorrect guess two](docs/images/incorrect_guess2.png)
 ### Incorrect Guess Three
-![incorrect guess three](assets/images/incorrect_guess3.png)
+![incorrect guess three](docs/images/incorrect_guess3.png)
 ### Incorrect Guess Four
-![incorrect guess four](assets/images/incorrect_guess4.png)
+![incorrect guess four](docs/images/incorrect_guess4.png)
 ### Incorrect Guess Five
-![incorrect guess five](assets/images/incorrect_guess5.png)
+![incorrect guess five](docs/images/incorrect_guess5.png)
 
 # Win/Lose Conditions: 
 * The game ends when the player either correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
@@ -80,12 +80,12 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 * When the player runs out of lives the game ends.
 * The completed hangman graphic is displayed along with a message telling thh user their letter chocie was incorrect and the game is over.
 
-![incorrect guess six](assets/images/incorrect_guess6.png)
+![incorrect guess six](docs/images/incorrect_guess6.png)
 
 * This message is displayed for a number of seconds, after which the console is cleared and the game is loaded again. 
 * The welcome screen is loaded and the player has the option to start a new game.
 
-![welcome screen](assets/images/welcome_screen.png)
+![welcome screen](docs/images/welcome_screen.png)
 
 ## Player Wins
 
@@ -103,6 +103,9 @@ For each game session, the data model randomly selects a word from the retrieved
 It then randomly selects a word from the retrieved list to be used in the current game session.
 
 # Testing 
+* I have confirmed the code's compliance with PEP8 standards using a Python code validator and detected no issues.
+* I've conducted tests to verify the project's ability to handle invalid inputs, including numbers or strings containing numbers.
+* Testing has been performed on both Gitpod and Code Institute's Heroku Terminal to ensure comprehensive validation of functionality.
 
 ## Bugs
 * The number of blanks being displayed initially does not seem to be the length of the word. Need to investigate and fix.
@@ -116,6 +119,81 @@ It then randomly selects a word from the retrieved list to be used in the curren
 
 # Deployment
 
+## Deployment and Development
+
+* The project was developed using [Gitpod](https://www.gitpod.io/#get-started) to create the code and files required.
+* The project files, code, and information are hosted by [Github](https://github.com/).
+
+### Deploying the App
+
+The deployment of the project was done using [Heroku](https://www.heroku.com/) through the following steps.
+
+1. Log in to Heroku or create an account if necessary.
+2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
+3. Enter a unique name for the application and select the region you are in.
+   * For this project, the unique name is "doctor-diary" and the region selected is Europe.
+4. Click on "create app".
+5. Navigate to the settings tab and locate the "Config Vars" section and click "Reveal config vars".
+6. Add a config var (if the project uses creds.json file.)
+   * In the "KEY" field:
+      * enter "CREDS" in capital letters.
+   * In the "VALUE" field:
+      * copy and paste the contents of your creds.json file and click "Add".
+7. Add another config var.
+   * In the "KEY" field:
+      * enter PORT in all capital letters.
+   * In the "VALUE" field:
+      * enter 8000 and click "Add".
+8. Scroll to the "Buildpacks" section and click "Add buildpack".
+9. Select Python and save changes.
+10. Add another buildpack and select Nodejs then save changes again.
+11. Ensure that the python buildpack is above the Nodejs buildpack.
+12. Navigate to the "Deploy" section by clicking the "Deploy" tab in the top navbar.
+13. Select "GitHub" as the deployment method and click "Connect to GitHub".
+14. Search for the GitHub repository name in the search bar.
+15. Click on "connect" to link the repository to Heroku.
+16. Scroll down and click on "Deploy Branch".
+17. Once the app is deployed, Heroku will notify you and provide a button to view the app.
+
+NB - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys".
+
+[Back to top](#contents)
+
+### Forking The Repository
+
+This can be done to create a copy of the repository. The copy can be viewed and edited without affecting the original repository.
+
+To fork the repository through GitHub, take the following steps:
+1. In the "doctor-diary" repository, click on the "fork" tab in the top right corner.
+2. Click on "create fork" to fork the repository.
+
+[Back to top](#contents)
+
+### Cloning The Repository
+
+To clone the repository through GitHub:
+
+1. In the repository, select the "code" tab located just above the list of files and next to the gitpod button.
+2. Ensure HTTPS is selected in the dropdown menu.
+3. Copy the URL under HTTPS.
+4. Open Git Bash in your IDE of choice.
+5. Change the current working directory to the location where you want the cloned directory to be created.
+6. Type "git clone" and paste the URL that was copied from the repository.
+7. Press the "enter" key to create the clone.
+
+[Back to top](#contents)
+
+### APIs 
+In order for the app to function properly, APIs need to be set up and connected. In particular, the following APIs were used for this project:
+
+* Google Drive API.
+   * This helps with getting credentials to access the files within google drive.
+* Google Sheets API.
+   * This is the API for the google sheets where the data is stored for the program.
+
+I followed the steps in a video from the [Code Institute](https://codeinstitute.net/global/) Love Sandwiches project on how to set up and connect APIs. The link to this video is [here](https://www.youtube.com/watch?v=WTll5p4N7hE).
+
+[Back to top](#contents)
 # Credits
 
 For regex pattern to identify only single character entered by user, https://bobbyhadz.com/blog/python-input-only-accept-one-character
