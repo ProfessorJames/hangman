@@ -113,7 +113,8 @@ def user_wants_to_play_game():
     User enters 'y' if they want to play, or enters 'n' otherwise.
     """
     while True:
-        user_input = input("""Do you want to play Hangman? (Enter 'y' for Yes,or 'n' for No): """).lower()
+        user_input = input("Do you want to play Hangman? "
+                           "(Enter 'y' for Yes, or 'n' for No): ").lower()
         if user_input == 'y':
             return True
         elif user_input == 'n':
