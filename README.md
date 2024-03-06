@@ -4,6 +4,19 @@ Welcome to the Python CLI Hangman Game!
 This command-line game is a fun and interactive way to test your vocabulary and word-guessing skills. Challenge yourself or play with friends to see who can guess the hidden word correctly.
 ### Deployed website [Hangman](xxx/ 'Hangman')
 
+
+## Contents
+
+
+## Purpose
+
+The purpose of this programme is to make an interactive Hangman cli game for users to play.
+
+This programme is developed to demonstrate competency in python programming and is for educational purposes.
+
+## Program Flowchart
+
+
 # How to Play
 Hangman is a word-guessing game where one player (the computer) thinks of a word, and the other player (you) tries to guess that word by suggesting letters. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game) 'Hangman').
 
@@ -131,7 +144,7 @@ The deployment of the project was done using [Heroku](https://www.heroku.com/) t
 1. Log in to Heroku or create an account if necessary.
 2. Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
 3. Enter a unique name for the application and select the region you are in.
-   * For this project, the unique name is "doctor-diary" and the region selected is Europe.
+   * For this project, the unique name is "pp3-hangman-prof-james" and the region selected is Europe.
 4. Click on "create app".
 5. Navigate to the settings tab and locate the "Config Vars" section and click "Reveal config vars".
 6. Add a config var (if the project uses creds.json file.)
@@ -139,21 +152,16 @@ The deployment of the project was done using [Heroku](https://www.heroku.com/) t
       * enter "CREDS" in capital letters.
    * In the "VALUE" field:
       * copy and paste the contents of your creds.json file and click "Add".
-7. Add another config var.
-   * In the "KEY" field:
-      * enter PORT in all capital letters.
-   * In the "VALUE" field:
-      * enter 8000 and click "Add".
-8. Scroll to the "Buildpacks" section and click "Add buildpack".
-9. Select Python and save changes.
-10. Add another buildpack and select Nodejs then save changes again.
-11. Ensure that the python buildpack is above the Nodejs buildpack.
-12. Navigate to the "Deploy" section by clicking the "Deploy" tab in the top navbar.
-13. Select "GitHub" as the deployment method and click "Connect to GitHub".
-14. Search for the GitHub repository name in the search bar.
-15. Click on "connect" to link the repository to Heroku.
-16. Scroll down and click on "Deploy Branch".
-17. Once the app is deployed, Heroku will notify you and provide a button to view the app.
+7. Scroll to the "Buildpacks" section and click "Add buildpack".
+8. Select Python and save changes.
+9. Add another buildpack and select Nodejs then save changes again.
+10. Ensure that the python buildpack is above the Nodejs buildpack.
+11. Navigate to the "Deploy" section by clicking the "Deploy" tab in the top navbar.
+12. Select "GitHub" as the deployment method and click "Connect to GitHub".
+13. Search for the GitHub repository name in the search bar.
+14. Click on "connect" to link the repository to Heroku.
+15. Scroll down and click on "Deploy Branch".
+16. Once the app is deployed, Heroku will notify you and provide a button to view the app.
 
 NB - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys".
 
@@ -164,7 +172,7 @@ NB - If you wish to rebuild the deployed app automatically every time you push t
 This can be done to create a copy of the repository. The copy can be viewed and edited without affecting the original repository.
 
 To fork the repository through GitHub, take the following steps:
-1. In the "doctor-diary" repository, click on the "fork" tab in the top right corner.
+1. In the "hanmgman" repository, click on the "fork" tab in the top right corner.
 2. Click on "create fork" to fork the repository.
 
 [Back to top](#contents)
@@ -196,4 +204,11 @@ I followed the steps in a video from the [Code Institute](https://codeinstitute.
 [Back to top](#contents)
 # Credits
 
-For regex pattern to identify only single character entered by user, https://bobbyhadz.com/blog/python-input-only-accept-one-character
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction
+* [Tony118g](https://github.com/Tony118g/doctor-diary) for detailed descriptions used in deployment section
+* For regex pattern to identify only single character entered by user, https://bobbyhadz.com/blog/python-input-only-accept-one-character
+
+## Code
+- Information on Python3 [Python Documentation](https://docs.python.org/3/).
+- Information on Google Spreadsheet API was sourced from [Gspread Documentation](https://docs.gspread.org/en/latest/index.html).
+- Regex pattern to identify only single character entered by user [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
