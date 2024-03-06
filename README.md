@@ -7,6 +7,7 @@ This command-line game is a fun and interactive way to test your vocabulary and 
 
 ## Contents
 
+* [Technologies Used](#technologies-used)
 
 ## Purpose
 
@@ -114,6 +115,39 @@ The data model includes functionalities to retrieve word data from the Google Sp
 When a new game is started the programme fetches the word data from the spreadsheet.
 For each game session, the data model randomly selects a word from the retrieved list of words.
 It then randomly selects a word from the retrieved list to be used in the current game session.
+
+## Technologies used
+
+* [Drawio/ Lucidchart](https://www.lucidchart.com/pages/).
+   * Used to create a flowchart during the planning stage.
+* [Python](https://www.python.org/)
+   * Used to provide functionality to the site.
+* [Google Sheets](https://www.google.com/sheets/about/)
+   * Used to host application data.
+* [Gitpod](https://www.gitpod.io)
+   * Used to create the code and content for the repository.
+* [Github](https://github.com/)
+   * Used to host the repository.
+
+[Back to top](#contents)
+
+## Python Packages Used
+
+* [GSpread](https://pypi.org/project/gspread/)
+   * Used to manipulate data in google sheets.
+* [time](https://docs.python.org/3/library/time.html)
+   * Used to pause execution of programme.
+* [os](https://docs.python.org/3/library/os.html)
+   * Used to clear the terminal.
+* [re](https://docs.python.org/3/library/re.html)
+   * Used to validate input.
+* [random](https://docs.python.org/3/library/random.html)
+   * Used to randomly select word.
+
+
+
+[Back to top](#contents)
+
 
 # Testing 
 * I have confirmed the code's compliance with PEP8 standards using a Python code validator and detected no issues.
