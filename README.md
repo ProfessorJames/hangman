@@ -29,11 +29,50 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 
 ![welcome screen](assets/images/welcome_screen.png)
 
+### Input validation
+* The player input is validated. If the user does not enter either 'y' or 'n' they are prompted to enter a correct oprion.
 
-- Word Selection: 
- The game randomly selects a word from a predefined list of words for the player to guess.
-- Guessing: The player can guess letters one by one to reveal the hidden word.
-- Incorrect Guess Tracking: The game keeps track of incorrect guesses and displays a hangman figure using ASCII art as the game progresses.
+![welcome screen validation](assets/images/welcome_validation.png)
+
+### User selects 'n'
+* If the user enters 'n' the game ends and a goodbye message is printed to the screen.
+
+![welcome screen goodbye](assets/images/welcome_goodbye.png)
+
+### User selects 'y'
+* If the user eneters 'y' the game begins. 
+* The programme makes a call to the Google Spreadsheet where various words are saved. 
+* The programme randomly selects a word from a predefined list of words for the player to guess. 
+* The programmes displays a blank space for each letter in the word (e.g. '________').
+
+![welcome screen yes](assets/images/welcome_yes.png)
+
+### Guessing 
+* The player can guess letters one by one to reveal the hidden word.
+* If the letter guessed by the player is a letter in the word, the display be will be updated with occureneces of that letter. 
+* The programme will only accept a single alphanumeric character (a through z). 
+* If the user doesn't enter a single alphanumeric character they will be asked to enter a single letter. 
+* If the user has already entered a letter in a previous guess, they will be asked to enter a new letter.
+* The letters that the user has guessed are displayed
+ on the screen.
+
+![guess validation](assets/images/guess_validation.png)
+
+## Incorrect Guess Tracking: 
+* The game keeps track of incorrect guesses and displays a hangman figure using ASCII art as the game progresses.
+* The player has 6 lives when the game starts. Each time a player guesses incorrectly they lose a life and the hangman art is updated and displayed.
+
+### Incorrect Guess One
+![incorrect guess one](assets/images/incorrect_guess1.png)
+### Incorrect Guess Two
+![incorrect guess two](assets/images/incorrect_guess2.png)
+### Incorrect Guess Three
+![incorrect guess three](assets/images/incorrect_guess3.png)
+### Incorrect Guess Four
+![incorrect guess four](assets/images/incorrect_guess4.png)
+### Incorrect Guess Five
+![incorrect guess sfive](assets/images/incorrect_guess5.png)
+
 - Win/Lose Conditions: The game ends when the player correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
 - Word Reveal: After the game ends, the hidden word is revealed, and the player is given the option to play again.
 ## Future Features
