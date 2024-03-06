@@ -23,6 +23,13 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 # Features
 
 ## Existing Features
+### Welcome screen
+* When the game loads the player sees the Hangman logo. The logo has been created using ascii art, a welcome message and instructions on how to play the game are displayed.
+* The user is asked if they want to play Hangman and prompted to enter 'y' for Yes or 'n' for No.
+
+![welcome screen](assets/images/welcome_screen.png)
+
+
 - Word Selection: 
  The game randomly selects a word from a predefined list of words for the player to guess.
 - Guessing: The player can guess letters one by one to reveal the hidden word.

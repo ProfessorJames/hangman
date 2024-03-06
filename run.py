@@ -187,7 +187,6 @@ def play_game():
     word_length = len(word)
     display = create_word_display(word_length)
 
-    print(word)
     while not game_over:
 
         guess = get_letter_input(guessed_letters)
