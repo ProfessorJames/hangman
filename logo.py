@@ -1,4 +1,4 @@
-from Colours import Colours
+from colours import Colours
 
 
 logo = """
