@@ -71,9 +71,24 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 ### Incorrect Guess Four
 ![incorrect guess four](assets/images/incorrect_guess4.png)
 ### Incorrect Guess Five
-![incorrect guess sfive](assets/images/incorrect_guess5.png)
+![incorrect guess five](assets/images/incorrect_guess5.png)
 
-- Win/Lose Conditions: The game ends when the player correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
+# Win/Lose Conditions: 
+* The game ends when the player either correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
+
+## Player Loses
+* When the player runs out of lives the game ends.
+* The completed hangman graphic is displayed along with a message telling thh user their letter chocie was incorrect and the game is over.
+
+![incorrect guess six](assets/images/incorrect_guess6.png)
+
+* This message is displayed for a number of seconds, after which the console is cleared and the game is loaded again. 
+* The welcome screen is loaded and the player has the option to start a new game.
+
+![welcome screen](assets/images/welcome_screen.png)
+
+## Player Wins
+
 - Word Reveal: After the game ends, the hidden word is revealed, and the player is given the option to play again.
 ## Future Features
 
@@ -86,7 +101,6 @@ The data model includes functionalities to retrieve word data from the Google Sp
 When a new game is started the programme fetches the word data from the spreadsheet.
 For each game session, the data model randomly selects a word from the retrieved list of words.
 It then randomly selects a word from the retrieved list to be used in the current game session.
-
 
 # Testing 
 
