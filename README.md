@@ -19,7 +19,7 @@ This command-line game is a fun and interactive way to test your vocabulary and 
 * [How to Play](#how-to-play)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
-  * [Programs, frameworks, libraries](#programs-frameworks-and-libraries)
+  * [Programs, frameworks, libraries](#programs-frameworks-libraries-and-tools)
 * [Testing](#testing)
 * [Bugs](#bugs)
   - [Unfixed-Bugs](#unfixed-Bugs)
@@ -223,18 +223,20 @@ The game was broken down into steps that would be required to navigate through t
 ### Languages
 * [Python](https://www.python.org/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript 'JS') (used in Code Institutes' Python Template to generate the workspace for the project) 
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML') (used in Code Institutes' Python Template to generate the workspace for the project) 
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML') (used in Code Institutes' Python Template to generate the workspace for the project)
+* [Markdown](https://en.wikipedia.org/wiki/Markdown): Used for content of README file
 
-### Programs, frameworks and libraries
+### Programs, frameworks, libraries and tools
 * [Drawio](https://app.diagrams.net/):  Used to create a flowchart during the planning stage 
 * [Python](https://www.python.org/): Used to provide functionality to the site.
-* [Google Drive](https://developers.google.com/drive): Used to process requests to a google sheet stored on google druiveSpreadsheets.
+* [Google Drive](https://developers.google.com/drive): Used to process requests to a google sheet stored on google drive
 * [Google Sheets](https://www.google.com/sheets/about/): Used to host application data.
 * [Gitpod](https://www.gitpod.io): Used to create the code and content for the repository.
 * [Git](https://git-scm.com/): Used to provide version control (to commit and push code to the repository). 
 * [Github](https://github.com/): Used to host the repository.
 * [Heroku](https://www.heroku.com/): Used to deploy and host the live app.
 * [Code Institute's Python Template](https://github.com/Code-Institute-Org/p3-template): Used to generate the workspace for the project.
+- [Markdown Tables Generator](https://www.tablesgenerator.com/ 'Markdown Tables Generator'): Used to generate markdown table for the project.
 
 \
 &nbsp;
@@ -275,7 +277,7 @@ Testing was essential to ensure the project functions correctly and meets the de
 |Offer ongoing feedback on performance throughout the game | Yes | Yes | Various feedback is provided  depending on the user input letters guessed, lives remaining etc.
 | Provide a clear indication of the game's start and end | Yes | Yes | Text and graphics displayed to user to define both the beginning and end of the game, and also game outcome if user has won or lost.
 |Implement input validation to minimize errors.| Yes | Yes | Validation on all inputs and feedback alos provided to user to prompt next action
-| Deliver feedback on the user's input throughout the game rounds. | Yes | Yes | Continual update to the user on the letters they have chosen, whihc letters are in the secret word, how many attempts remaining.
+| Deliver feedback on the user's input throughout the game rounds. | Yes | Yes | Continual update to the user on the letters they have chosen, which letters are in the secret word, how many attempts remaining. Feedback is provided by text and graphically.
 
 \
 &nbsp;
