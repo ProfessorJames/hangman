@@ -76,14 +76,6 @@ This programme is developed to demonstrate competency in python programming and 
 \
 &nbsp;
 
-## Planning
-
-Initially I planned out the game going through each of the possible steps that could be involved in the game. This was to give me a better understanding of how the game should funtion programatically
-
-The game was broken down into steps that would be required to navigate through the game. This was an iterative process. The steps were documented. 
-
-![Initial Planningwelcome screen](docs/images/planning.png)
-
 # How to Play
 Hangman is a word-guessing game where one player (the computer) thinks of a word, and the other player (you) tries to guess that word by suggesting letters. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game) 'Hangman').
 
@@ -106,6 +98,14 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+## Planning
+
+Initially I planned out the game going through each of the possible steps that could be involved in the game. This was to give me a better understanding of how the game should funtion programatically.
+
+The game was broken down into steps that would be required to navigate through the game. This was an iterative process. The steps were documented. 
+
+![Initial Planningwelcome screen](docs/images/planning.png)
 
 # Features
 
@@ -229,18 +229,12 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 * [Drawio](https://app.diagrams.net/):  Used to create a flowchart during the planning stage 
 * [Python](https://www.python.org/): Used to provide functionality to the site.
 * [Google Drive](https://developers.google.com/drive): Used to process requests to a google sheet stored on google druiveSpreadsheets.
-* [Google Sheets](https://www.google.com/sheets/about/)
-   * Used to host application data.
-* [Gitpod](https://www.gitpod.io)
-   * Used to create the code and content for the repository.
-* [Git](https://git-scm.com/) 
-   * Used to provide version control (to commit and push code to the repository). 
-* [Github](https://github.com/)
-   * Used to host the repository.
-* [Heroku](https://www.heroku.com/) 
-   * Used to deploy and host the live app.
-* [Code Institute's Python Template](https://github.com/Code-Institute-Org/p3-template) 
-   * Used to generate the workspace for the project.
+* [Google Sheets](https://www.google.com/sheets/about/): Used to host application data.
+* [Gitpod](https://www.gitpod.io): Used to create the code and content for the repository.
+* [Git](https://git-scm.com/): Used to provide version control (to commit and push code to the repository). 
+* [Github](https://github.com/): Used to host the repository.
+* [Heroku](https://www.heroku.com/): Used to deploy and host the live app.
+* [Code Institute's Python Template](https://github.com/Code-Institute-Org/p3-template): Used to generate the workspace for the project.
 
 \
 &nbsp;
@@ -250,23 +244,44 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 
 ## Python Packages Used
 
-* [GSpread](https://pypi.org/project/gspread/)
-   * Used to manipulate data in google sheets.
-* [time](https://docs.python.org/3/library/time.html)
-   * Used to pause execution of programme.
-* [os](https://docs.python.org/3/library/os.html)
-   * Used to clear the terminal.
-* [re](https://docs.python.org/3/library/re.html)
-   * Used to validate input.
-* [random](https://docs.python.org/3/library/random.html)
-   * Used to randomly select word.
-
+* [GSpread](https://pypi.org/project/gspread/): Used to manipulate data in google sheets.
+* [time](https://docs.python.org/3/library/time.html): Used to pause execution of programme.
+* [os](https://docs.python.org/3/library/os.html): Used to clear the terminal.
+* [re](https://docs.python.org/3/library/re.html): Used to validate input.
+* [random](https://docs.python.org/3/library/random.html): Used to randomly select word.
 
 
 [Back to top](#contents)
 
 
 # Testing 
+
+Testing was essential to ensure the project functions correctly and meets the desired user experience. The following testing was conducted throughout the development of the project:
+
+1. Testing User Stories
+
+| User Stories                                                                                           | Achieved By                                                                                                                                                           | Test Status |
+|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+|  As a user, I want clear guidance on how to play the game. | This was achie
+As a user, I want the ability to enter letters to guess the hidden word.
+As a user, I want feedback on my performance after each guess.
+
+
+### UX Testing
+
+| Requirements & Expectations | Implemented | Tested | Comments
+| ------------ | ----------- | ------ | --------
+|Single page layout | Yes | Yes | Provided by Code Institute template
+|Offer ongoing feedback on performance throughout the game | Yes | Yes | Various feedback is provided  depending on the user input letters guessed, lives remaining etc.
+| Provide a clear indication of the game's start and end | Yes | Yes | Text and graphics displayed to user to define both the beginning and end of the game, and also game outcome if user has won or lost.
+|Implement input validation to minimize errors.| Yes | Yes | Validation on all inputs and feedback alos provided to user to prompt next action
+| Deliver feedback on the user's input throughout the game rounds. | Yes | Yes | Continual update to the user on the letters they have chosen, whihc letters are in the secret word, how many attempts remaining.
+
+\
+&nbsp;
+[Back to top](#table-of-contents)
+\
+&nbsp;
 * I have confirmed the code's compliance with PEP8 standards using a Python code validator and detected no issues.
 * I've conducted tests to verify the project's ability to handle invalid inputs, including numbers or strings containing numbers.
 * Testing has been performed on both Gitpod and Code Institute's Heroku Terminal to ensure comprehensive validation of functionality.
@@ -366,7 +381,7 @@ I followed the steps in a video from the [Code Institute](https://codeinstitute.
 ## Code
 - Information on Python3 [Python Documentation](https://docs.python.org/3/).
 - Information on Google Spreadsheet API was sourced from [Gspread Documentation](https://docs.gspread.org/en/latest/index.html).
-- Regex pattern to identify only single character entered by user [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
+- Inffo on Regex pattern to identify only single character entered by user: [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
 
 \
 &nbsp;
