@@ -208,7 +208,7 @@ The game was broken down into steps that would be required to navigate through t
 ## Future Features
 
 * Difficulty levels: Implement different difficulty levels (easy, medium, hard) with varying word lengths, timer or limited guesses for a more challenging experience.
-* Hint system: Allow players to use hints to reveal a letter in the word, at the cost of points or lives.
+* Hint system: Allow players to use hints to reveal a letter in the word, at the cost of lives.
 * Theme selection: Provide different themes or categories for word selection (e.g., animals, countries, movies) to add variety to gameplay.
 
 \
@@ -242,8 +242,8 @@ The game was broken down into steps that would be required to navigate through t
 
 ### Languages
 * [Python](https://www.python.org/)
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript 'JS') (used in Code Institutes' Python Template to generate the workspace for the project) 
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML') (used in Code Institutes' Python Template to generate the workspace for the project)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript 'JS'): Used in Code Institutes' Python Template to generate the workspace for the project
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML'): Used in Code Institutes' Python Template to generate the workspace for the project
 * [Markdown](https://en.wikipedia.org/wiki/Markdown): Used for content of README file
 
 ### Programs, frameworks, libraries and tools
@@ -256,6 +256,7 @@ The game was broken down into steps that would be required to navigate through t
 * [Github](https://github.com/): Used to host the repository.
 * [Heroku](https://www.heroku.com/): Used to deploy and host the live app.
 * [Code Institute's Python Template](https://github.com/Code-Institute-Org/p3-template): Used to generate the workspace for the project.
+* [Code Institute's PEP8 Validator](https://pep8ci.herokuapp.com//): Used to enusre python code complies with pep8.
 - [Markdown Tables Generator](https://www.tablesgenerator.com/ 'Markdown Tables Generator'): Used to generate markdown table for the project.
 
 \
@@ -297,19 +298,38 @@ The following testing was conducted throughout the development of the project:
 | Requirements & Expectations | Implemented | Tested | Comments
 | ------------ | ----------- | ------ | --------
 |Single page layout | Yes | Yes | Provided by Code Institute template
-|Offer ongoing feedback on performance throughout the game | Yes | Yes | Various feedback is provided  depending on the user input letters guessed, lives remaining etc.
-| Provide a clear indication of the game's start and end | Yes | Yes | Text and graphics displayed to user to define both the beginning and end of the game, and also game outcome if user has won or lost.
-|Implement input validation to minimize errors.| Yes | Yes | Validation on all inputs and feedback alos provided to user to prompt next action
-| Deliver feedback on the user's input throughout the game rounds. | Yes | Yes | Continual update to the user on the letters they have chosen, which letters are in the secret word, how many attempts remaining. Feedback is provided by text and graphically.
+|Offer ongoing feedback on performance throughout the game | Yes | Yes | Various feedback is provided  depending on the user input, letters guessed, lives remaining etc.
+| Provide a clear indication of the game's start and end | Yes | Yes | Text and graphics displayed to user to signal both the beginning and end of the game, and also game outcome if user has won or lost.
+|Implement input validation to minimize errors.| Yes | Yes | Validation on all inputs and feedback also provided to user to prompt next action
+| Deliver feedback on the user's input throughout the game rounds. | Yes | Yes | Continual updates to the user on the letters they have chosen, which letters are in the secret word, how many attempts remaining. Feedback is provided by text and graphically.
 
 \
 &nbsp;
 [Back to top](#table-of-contents)
 \
 &nbsp;
-* I have confirmed the code's compliance with PEP8 standards using a Python code validator and detected no issues.
+
 * I've conducted tests to verify the project's ability to handle invalid inputs, including numbers or strings containing numbers.
+
 * Testing has been performed on both Gitpod and Code Institute's Heroku Terminal to ensure comprehensive validation of functionality.
+<details>
+ <summary>Testing Results</summary>
+
+ Welcome Validation
+![welcome validation](docs/images/welcome_validation.png)
+ Guess Validation
+![guess validation](docs/images/guess_validation.png)
+ Incorrect Guesses
+![Incorrect Guess 1](docs/images/incorrect_guess1.png)
+![Incorrect Guess 2](docs/images/incorrect_guess2.png)
+![Incorrect Guess 3](docs/images/incorrect_guess3.png)
+![Incorrect Guess 4](docs/images/incorrect_guess4.png)
+![Incorrect Guess 5](docs/images/incorrect_guess5.png)
+![Incorrect Guess 6](docs/images/incorrect_guess6.png)
+Correct Guesses
+![Correct Guess](docs/images/player_wins.png)
+
+</details>
 
 ## Automated testing
 **[PEP 8](https://pep8ci.herokuapp.com//) - Python Validation**
