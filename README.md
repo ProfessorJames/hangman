@@ -446,7 +446,7 @@ I followed the steps in a video from the [Code Institute](https://codeinstitute.
 # Credits
 
 * [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction
-* [Tony118g](https://github.com/Tony118g/doctor-diary) for detailed descriptions used in deployment section
+* [Tony118g](https://github.com/Tony118g/doctor-diary) for detailed descriptions of deployimng app on Heroku used in deployment section
 * For regex pattern to identify only single character entered by user, https://bobbyhadz.com/blog/python-input-only-accept-one-character
 
 ## Code
