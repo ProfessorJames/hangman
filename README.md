@@ -260,12 +260,12 @@ Testing was essential to ensure the project functions correctly and meets the de
 
 1. Testing User Stories
 
-| User Stories                                                                                           | Achieved By                                                                                                                                                           | Test Status |
-|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-|  As a user, I want clear guidance on how to play the game. | This was achie
-As a user, I want the ability to enter letters to guess the hidden word.
-As a user, I want feedback on my performance after each guess.
-
+| User Stories                                                             | Achieved By                                                                                                                                                                                                                                                                                                                      | Test Status |
+|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| As a user, I want clear guidance on how to play the game.                | Instructions on how to play the game are displayed on the welcome screen                                                                                                                                                                                                                                                         | Pass        |
+| As a user, I want to be prompted when the programme is ready for me to guess a letter.             | User is promted to guess a letter when the programme is ready                                                                                                                                                                                                                                                                    | Pass        |
+| As a user, I want the ability to enter letters to guess the hidden word. | User is promted to guess a letter when the programme is ready                                                                                                                                                                                                                                                                    | Pass        |
+| As a user, I want feedback on my performance after each guess.           | Programme provides feedback to user after each letter guess. If letter is in word the blanks spaces are filled in where that letter is present in the word. If letter is not in word the hangman graphic is displayed. Letters guessed already are also displayed along with number of lives remaining in case of incorrect guess | Pass        |
 
 ### UX Testing
 
