@@ -118,16 +118,30 @@ It then randomly selects a word from the retrieved list to be used in the curren
 
 ## Technologies used
 
-* [Drawio/ Lucidchart](https://www.lucidchart.com/pages/).
+### Languages
+* Python
+* Javascript (used in Code Institutes' Python Template to generate the workspace for the project) 
+* HTML (used in Code Institutes' Python Template to generate the workspace for the project) 
+
+### Programs, frameworks and libraries
+* [Drawio](https://app.diagrams.net/).
    * Used to create a flowchart during the planning stage.
 * [Python](https://www.python.org/)
    * Used to provide functionality to the site.
+* [Google Drive](https://developers.google.com/drive) 
+   * Used to write an app to process requests to Spreadsheets.
 * [Google Sheets](https://www.google.com/sheets/about/)
    * Used to host application data.
 * [Gitpod](https://www.gitpod.io)
    * Used to create the code and content for the repository.
+* [Git](https://git-scm.com/) 
+   * Used to provide version control (to commit and push code to the repository). 
 * [Github](https://github.com/)
    * Used to host the repository.
+* [Heroku](https://www.heroku.com/) 
+   * Used to deploy and host the live app.
+* [Code Institute's Python Template]() 
+   * Used to generate the workspace for the project.
 
 [Back to top](#contents)
 
