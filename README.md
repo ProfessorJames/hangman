@@ -357,11 +357,11 @@ Correct Guesses
 * All known bugs within the project have been resolved. Each bug identified during the development phase was thoroughly analyzed, and appropriate solutions were implemented to address them.
 
 ### Solved Bugs
-* During development, an issue arose where the display was showing one more blank space than the actual number of letters in the word to be guessed. Initially, this issue was fixed by updating the range to be one less than the length of the word. However, this was an inccorect approach which was revealed during testing. Subsequently the code was refactored and the error was removed. 
+* During development, an issue arose where the display was showing one more blank space than the actual number of letters in the word to be guessed. Initially, this issue was fixed by updating the range to be one less than the length of the word. However, this was an incorrect approach which was revealed during testing. Subsequently the code was refactored and the error was removed. 
 * During development, it was noticed that a user could enter the same letter more than once when attempting to guess the word. To improve the user experience and prevent duplicate guesses, the input function has been updated. Now, a letter can only be guessed by the user once, ensuring a smoother gameplay flow. If the user enters a duplicate letter, they are prompted to guess a new letter. A message is displayed asking them to input a different letter.
 * An error was encountered occasionally, with the message: "File 'run.py', line 138, in play_game, print(GRAPHICS[counter]), IndexError: list index out of range." This error likely occurred due to the counter variable incrementing incorrectly when the same letter was picked multiple times. To address this, the code has been refactored to eliminate the need for a counter variable. This modification ensures smoother gameplay, especially when a player selects a letter they have already chosen.
 * There was an issue with the check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic is displayed.
-* When the app was deployed on Heroku, an error message occasionally appeared indicating that the logo file contained incorrect escape characters. This error stemmed from the backslash (\) characters used in the Hangman logo within the art.py file. To resolve this issue, the backslashes were appropriately escaped within the Hangman logo string, ensuring that Python interpreted them as literal characters rather than escape characters.
+* When the app was deployed on Heroku, an error message occasionally appeared indicating that the logo file contained incorrect escape characters. This error stemmed from the backslash (" \\ ") characters used in the Hangman logo within the art.py file. To resolve this issue, the backslashes were appropriately escaped within the Hangman logo string, ensuring that Python interpreted them as literal characters rather than escape characters.
 
 \
 &nbsp;
@@ -406,25 +406,28 @@ NB - If you wish to rebuild the deployed app automatically every time you push t
 
 [Back to Top](#table-of-contents)
 
-### Forking The Repository
+## Forking Project
+Forking a GitHub repository allows you to create your own copy of a repository in your GitHub account. This copy can be modified independently without affecting the original repository.
 
-This can be done to create a copy of the repository. The copy can be viewed and edited without affecting the original repository.
+- To fork a project, follow these steps:
+- Sign in to your GitHub account.
+- Locate the repository you wish to duplicate.
+- Click to access the repository.
+- On the right hand side of the repository's menu, you'll see the 'Fork' button.
+- Simply click the 'Fork' button to create a copy of the repository within your GitHub account."
 
-To fork the repository through GitHub, take the following steps:
-1. In the "hanmgman" repository, click on the "fork" tab in the top right corner.
-2. Click on "create fork" to fork the repository.
+## Cloning Project
+Follow the below steps to clone the repository to your local machine.
 
-### Cloning The Repository
-
-To clone the repository through GitHub:
-
-1. In the repository, select the "code" tab located just above the list of files and next to the gitpod button.
-2. Ensure HTTPS is selected in the dropdown menu.
-3. Copy the URL under HTTPS.
-4. Open Git Bash in your IDE of choice.
-5. Change the current working directory to the location where you want the cloned directory to be created.
-6. Type "git clone" and paste the URL that was copied from the repository.
-7. Press the "enter" key to create the clone.
+- Log in to your GitHub account if you're not already logged in.
+- Go to the main page of the repository you want to clone.
+- Click on the "Code" button. 
+- Click the clipboard icon next to the repository URL to copy it.
+- Launch your system's IDE, terminal or command prompt.
+- Use the 'cd' command to navigate to the directory where you want to store the cloned repository.
+ `cd /path/to/your/desired/directory`
+- Type the following command, replacing `<repository-url>` with the URL you copied earlier:
+ `git clone <repository-url>`
 
 [Back to Top](#table-of-contents)
 
