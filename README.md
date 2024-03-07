@@ -2,18 +2,79 @@
 
 Welcome to the Python CLI Hangman Game! 
 This command-line game is a fun and interactive way to test your vocabulary and word-guessing skills. Challenge yourself or play with friends to see who can guess the hidden word correctly.
-### Deployed website [Hangman](xxx/ 'Hangman')
 
+### Deployed website [Hangman](https://pp3-hangman-prof-james-512b326abe7e.herokuapp.com/ 'Hangman')
 
-## Contents
+![Welcome screen](docs/images/welcome_screen.png)
 
+## Table of Contents
+* [Purpose](#purpose)
+* [UX](#ux "UX")
+    * [User Goals](#user-goals "User Goals")
+    * [User Stories](#user-stories "User Stories")
+    * [Site Owners Goals](#site-owners-goals)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+         * [Requirements](#requirements)
+         * [Expectations](#expectations)
+* [How to Play](#how-to-play)
 * [Technologies Used](#technologies-used)
+  * [Languages](#languages)
+  * [Programs, frameworks, libraries](#programs-frameworks-and-libraries)
+* [Testing](#testing)
+* [Bugs](#bugs)
+  - [Unfixed-Bugs](#unfixed-Bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
 ## Purpose
 
-The purpose of this programme is to make an interactive Hangman cli game for users to play.
+The purpose of this programme is to make an interactive Hangman CLI game for users to play.
 
 This programme is developed to demonstrate competency in python programming and is for educational purposes.
+
+# UX
+
+## User Goals
+* Instructions on how to play the game.
+* Know when it's the users go
+* Knowledge of the game's outcome, whether it's a win or loss.
+* Continual feedback throughout the game
+
+## User Stories
+* As a user, I want clear guidance on how to play the game.
+* As a user, I want to be prompted when it's my turn to guess.
+* As a user, I want the ability to enter letters to guess the hidden word.
+* As a user, I want feedback on my performance after each guess.
+* As a user, I want to be informed of the game's outcome (win, or lose).
+
+## Site owners Goals
+* Present clear instructions to the user.
+* Offer feedback on the user's performance.
+* Ensure validation for expected user inputs.
+
+## User Requirements and Expectations
+
+### Requirements
+* Ensure a single-page layout for straightforward navigation.
+* Offer ongoing feedback on performance throughout the game.
+* Provide a clear indication of the game's start and end.
+* Implement input validation to minimize errors.
+* Deliver feedback on the user's input throughout the game rounds.
+
+### Expectations
+* I expect to know when the game starts and finishes
+* I expect to have the rules of the game explained to me 
+* I expect input validation to ensure accurate letter guesses 
+* I expect to receive feedback on my accuracy in guessing letters
+* I expect to receive feedback on how many lives are remaining
+* I expect to receive feedback on letters that have been guessed previously
+* I expect visual cues indicating the position of guessed letters within the word to enhance my gameplay experience.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Program Flowchart
 
@@ -34,6 +95,13 @@ Here's how to play:
 - Strategy: Start with common vowels, avoid repeating incorrect guesses, and pay attention to the hangman figure's progress.
 
 Enjoy playing Hangman against the computer in our Python CLI game!
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 # Features
 
 ## Existing Features
@@ -61,6 +129,12 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 
 ![welcome screen yes](docs/images/welcome_yes.png)
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ### Guessing 
 * The player can guess letters one by one to reveal the hidden word.
 * If the letter guessed by the player is a letter in the word, the display be will be updated with occureneces of that letter. 
@@ -87,6 +161,12 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 ### Incorrect Guess Five
 ![incorrect guess five](docs/images/incorrect_guess5.png)
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 # Win/Lose Conditions: 
 * The game ends when the player either correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
 
@@ -106,30 +186,39 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 - Word Reveal: After the game ends, the hidden word is revealed, and the player is given the option to play again.
 ## Future Features
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ## Data Model
-The data model includes integration with Google Sheets using the Google Drive API and the gspread library in Python.
-Authentication and authorization mechanisms are implemented to securely access the designated Google Spreadsheet. 
-The Hangman game utilizes a designated Google Spreadsheet to store the words used in the game.
-Each word is stored in a separate cell within the spreadsheet.
-The data model includes functionalities to retrieve word data from the Google Spreadsheet programmatically using the gspread library.
-When a new game is started the programme fetches the word data from the spreadsheet.
-For each game session, the data model randomly selects a word from the retrieved list of words.
-It then randomly selects a word from the retrieved list to be used in the current game session.
+* The data model includes integration with Google Sheets using the Google Drive API and the gspread library in Python.
+* Authentication and authorization mechanisms are implemented to securely access the designated Google Spreadsheet. 
+* The Hangman game utilizes a designated Google Spreadsheet to store the words used in the game.
+* Each word is stored in a separate cell within the spreadsheet.
+* The data model includes functionalities to retrieve word data from the Google Spreadsheet programmatically using the gspread library.
+* When a new game is started the programme fetches the word data from the google spreadsheet.
+* For each game session, the data model randomly selects a word from the retrieved list of words.
+* The data model then randomly selects a word from the retrieved list to be used in the current game session.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Technologies used
 
 ### Languages
-* Python
-* Javascript (used in Code Institutes' Python Template to generate the workspace for the project) 
-* HTML (used in Code Institutes' Python Template to generate the workspace for the project) 
+* [Python](https://www.python.org/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript 'JS') (used in Code Institutes' Python Template to generate the workspace for the project) 
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML 'HTML') (used in Code Institutes' Python Template to generate the workspace for the project) 
 
 ### Programs, frameworks and libraries
-* [Drawio](https://app.diagrams.net/).
-   * Used to create a flowchart during the planning stage.
-* [Python](https://www.python.org/)
-   * Used to provide functionality to the site.
-* [Google Drive](https://developers.google.com/drive) 
-   * Used to write an app to process requests to Spreadsheets.
+* [Drawio](https://app.diagrams.net/):  Used to create a flowchart during the planning stage 
+* [Python](https://www.python.org/): Used to provide functionality to the site.
+* [Google Drive](https://developers.google.com/drive): Used to process requests to a google sheet stored on google druiveSpreadsheets.
 * [Google Sheets](https://www.google.com/sheets/about/)
    * Used to host application data.
 * [Gitpod](https://www.gitpod.io)
@@ -140,10 +229,14 @@ It then randomly selects a word from the retrieved list to be used in the curren
    * Used to host the repository.
 * [Heroku](https://www.heroku.com/) 
    * Used to deploy and host the live app.
-* [Code Institute's Python Template]() 
+* [Code Institute's Python Template](https://github.com/Code-Institute-Org/p3-template) 
    * Used to generate the workspace for the project.
 
-[Back to top](#contents)
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Python Packages Used
 
@@ -176,6 +269,12 @@ It then randomly selects a word from the retrieved list to be used in the curren
 * An error was encountered occasionally, with the message: "File 'run.py', line 138, in play_game, print(GRAPHICS[counter]), IndexError: list index out of range." This error likely occurred due to the counter variable incrementing incorrectly when the same letter was picked multiple times. To address this, the code has been refactored to eliminate the need for a counter variable. This modification ensures smoother gameplay, especially when a player selects a letter they have already chosen.
 * There was an issue with the check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic is displayed.
 * When the app was deployed on Heroku, an error message occasionally appeared indicating that the logo file contained incorrect escape characters. This error stemmed from the backslash (\) characters used in the Hangman logo within the art.py file. To resolve this issue, the backslashes were appropriately escaped within the Hangman logo string, ensuring that Python interpreted them as literal characters rather than escape characters.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 # Deployment
 
@@ -212,7 +311,7 @@ The deployment of the project was done using [Heroku](https://www.heroku.com/) t
 
 NB - If you wish to rebuild the deployed app automatically every time you push to GitHub, you may click on "Enable Automatic Deploys".
 
-[Back to top](#contents)
+[Back to Top](#table-of-contents)
 
 ### Forking The Repository
 
@@ -221,8 +320,6 @@ This can be done to create a copy of the repository. The copy can be viewed and 
 To fork the repository through GitHub, take the following steps:
 1. In the "hanmgman" repository, click on the "fork" tab in the top right corner.
 2. Click on "create fork" to fork the repository.
-
-[Back to top](#contents)
 
 ### Cloning The Repository
 
@@ -236,7 +333,7 @@ To clone the repository through GitHub:
 6. Type "git clone" and paste the URL that was copied from the repository.
 7. Press the "enter" key to create the clone.
 
-[Back to top](#contents)
+[Back to Top](#table-of-contents)
 
 ### APIs 
 In order for the app to function properly, APIs need to be set up and connected. In particular, the following APIs were used for this project:
@@ -248,7 +345,8 @@ In order for the app to function properly, APIs need to be set up and connected.
 
 I followed the steps in a video from the [Code Institute](https://codeinstitute.net/global/) Love Sandwiches project on how to set up and connect APIs. The link to this video is [here](https://www.youtube.com/watch?v=WTll5p4N7hE).
 
-[Back to top](#contents)
+[Back to Top](#table-of-contents)
+
 # Credits
 
 * [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction
@@ -259,3 +357,9 @@ I followed the steps in a video from the [Code Institute](https://codeinstitute.
 - Information on Python3 [Python Documentation](https://docs.python.org/3/).
 - Information on Google Spreadsheet API was sourced from [Gspread Documentation](https://docs.gspread.org/en/latest/index.html).
 - Regex pattern to identify only single character entered by user [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
