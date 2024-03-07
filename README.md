@@ -76,8 +76,13 @@ This programme is developed to demonstrate competency in python programming and 
 \
 &nbsp;
 
-## Program Flowchart
+## Planning
 
+Initially I planned out the game going through each of the possible steps that could be involved in the game. This was to give me a better understanding of how the game should funtion programatically
+
+The game was broken down into steps that would be required to navigate through the game. This was an iterative process. The steps were documented. 
+
+![Initial Planningwelcome screen](docs/images/planning.png)
 
 # How to Play
 Hangman is a word-guessing game where one player (the computer) thinks of a word, and the other player (you) tries to guess that word by suggesting letters. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game) 'Hangman').
@@ -191,6 +196,11 @@ Enjoy playing Hangman against the computer in our Python CLI game!
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+## Flowchart
+
+![Flowchart](docs/images/flowchart_hangman.png)
+
 
 ## Data Model
 * The data model includes integration with Google Sheets using the Google Drive API and the gspread library in Python.
