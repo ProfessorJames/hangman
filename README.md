@@ -155,14 +155,13 @@ It then randomly selects a word from the retrieved list to be used in the curren
 * Testing has been performed on both Gitpod and Code Institute's Heroku Terminal to ensure comprehensive validation of functionality.
 
 ## Bugs
-* The number of blanks being displayed initially does not seem to be the length of the word. Need to investigate and fix.
-* There is an issue with the graphics being displayed. Sometimes getting the following error: File "run.py", line 138, in play_game
-    print(GRAPHICS[counter]) IndexError: list index out of range. Need to fix. Could be to do with counter variable incrementing if the same letter is picked a number of times. Print counter to console to track. Code was refactored to so that it does not need a counter variable. The counter variable was causing issues when a player selected a letter that tehy had already selected.
-* There was an issue with the update check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic will display.
 
 ### Solved Bugs
-* During development the display was showing one more blank space than there were letters in the word to be guessed. This was solved by updating the range to be one less than the length of the word. 
-* During development it was noticed a user could enter the same letter more than once. TODO. update input function so that letter can only be added by user once.
+* During development, an issue arose where the display was showing one more blank space than the actual number of letters in the word to be guessed. Initially, this issue was fixed by updating the range to be one less than the length of the word. However, this was an inccorect approach which was revealed during testing. Subsequently the code was refactored and the error was removed. 
+* During development, it was noticed that a user could enter the same letter more than once when attempting to guess the word. To improve the user experience and prevent duplicate guesses, the input function has been updated. Now, a letter can only be guessed by the user once, ensuring a smoother gameplay flow. If the user enters a duplicate letter, they are prompted to guess a new letter. A message is displayed asking them to input a different letter.
+* An error was encountered occasionally, with the message: "File 'run.py', line 138, in play_game, print(GRAPHICS[counter]), IndexError: list index out of range." This error likely occurred due to the counter variable incrementing incorrectly when the same letter was picked multiple times. To address this, the code has been refactored to eliminate the need for a counter variable. This modification ensures smoother gameplay, especially when a player selects a letter they have already chosen.
+* There was an issue with the check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic is displayed.
+* When the app was deployed on Heroku, an error message occasionally appeared indicating that the logo file contained incorrect escape characters. This error stemmed from the backslash (\) characters used in the Hangman logo within the art.py file. To resolve this issue, the backslashes were appropriately escaped within the Hangman logo string, ensuring that Python interpreted them as literal characters rather than escape characters.
 
 # Deployment
 

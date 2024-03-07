@@ -50,7 +50,7 @@ pause(2)
 
 while user_wants_to_play_game():
     play_game()
-    pause(2)
+    pause(4)
     clear_console()
     display_logo(green_logo)
     display_welcome_message()
