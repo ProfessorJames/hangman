@@ -17,10 +17,16 @@ This command-line game is a fun and interactive way to test your vocabulary and 
          * [Requirements](#requirements)
          * [Expectations](#expectations)
 * [How to Play](#how-to-play)
+* [Planning](#planning)
+* [Features](#features)
+  * [Existing Features](#existing-features)
+  * [Incorrect Guess Tracking](#incorrect-guess-tracking)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
   * [Programs, frameworks, libraries](#programs-frameworks-libraries-and-tools)
 * [Testing](#testing)
+      * [UX Testing](#ux-testing)
+      * [Code Validation](#code-validation)
 * [Bugs](#bugs)
   - [Unfixed-Bugs](#unfixed-Bugs)
 * [Deployment](#deployment)
@@ -188,7 +194,16 @@ The game was broken down into steps that would be required to navigate through t
 
 ## Player Wins
 
-- Word Reveal: After the game ends, the hidden word is revealed, and the player is given the option to play again.
+* When the player guesses all letters in the word they have won and the game ends.
+* The completed word is displayed along with a message telling the user they have guessed teh word correctly and tehy have won teh game.
+
+![Player wins](docs/images/player_wins.png)
+
+* This message is displayed for a number of seconds, after which the console is cleared and the game is loaded again. 
+* The welcome screen is loaded and the player has the option to start a new game.
+
+![welcome screen](docs/images/welcome_screen.png)
+
 ## Future Features
 
 \
