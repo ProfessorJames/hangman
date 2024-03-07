@@ -25,7 +25,8 @@ This command-line game is a fun and interactive way to test your vocabulary and 
   * [Languages](#languages)
   * [Programs, frameworks, libraries](#programs-frameworks-libraries-and-tools)
 * [Testing](#testing)
-      * [UX Testing](#ux-testing)
+   * [UX Testing](#ux-testing)
+   * [Automated Testing](#automated-testing)
       * [Code Validation](#code-validation)
 * [Bugs](#bugs)
   - [Unfixed-Bugs](#unfixed-Bugs)
@@ -273,9 +274,12 @@ The game was broken down into steps that would be required to navigate through t
 
 # Testing 
 
-Testing was essential to ensure the project functions correctly and meets the desired user experience. The following testing was conducted throughout the development of the project:
+* Testing was essential to ensure the project functions correctly and meets the desired user experience. 
+* The app was manually tested in Chrome, Safari and Firefox on Windows.
 
-1. Testing User Stories
+The following testing was conducted throughout the development of the project:
+
+### Testing User Stories
 
 | User Stories                                                             | Achieved By                                                                                                                                                                                                                                                                                                                      | Test Status |
 |--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
@@ -303,7 +307,30 @@ Testing was essential to ensure the project functions correctly and meets the de
 * I've conducted tests to verify the project's ability to handle invalid inputs, including numbers or strings containing numbers.
 * Testing has been performed on both Gitpod and Code Institute's Heroku Terminal to ensure comprehensive validation of functionality.
 
+## Automated testing
+**[PEP 8](https://pep8ci.herokuapp.com//) - Python Validation**
+* All custom python files were run through the Code Institute PEP8 validator. 
+* No errors were detected.
+
+<details>
+ <summary>PEP8 Testing Results</summary>
+
+ run.py
+![run.py](docs/validation/pep8_run.png)
+ game_logic.py
+![game_logic.py](docs/validation/pep8_game_logic.png)
+ utils.py
+![utils.py](docs/validation/pep8_utils.png)
+ google.py
+![google.py](docs/validation/pep8_google.png)
+ colours.py
+![colours.py](docs/validation/pep8_colours.png)
+ art.py
+![art.py](docs/validation/pep8_art.png)
+</details>
+
 ## Bugs
+* All known bugs within the project have been resolved. Each bug identified during the development phase was thoroughly analyzed, and appropriate solutions were implemented to address them.
 
 ### Solved Bugs
 * During development, an issue arose where the display was showing one more blank space than the actual number of letters in the word to be guessed. Initially, this issue was fixed by updating the range to be one less than the length of the word. However, this was an inccorect approach which was revealed during testing. Subsequently the code was refactored and the error was removed. 
