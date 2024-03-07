@@ -316,17 +316,24 @@ The following testing was conducted throughout the development of the project:
  <summary>Testing Results</summary>
 
  Welcome Validation
-![welcome validation](docs/images/welcome_validation.png)
+
+![welcome validation](docs/testing/welcome_validation.png)
+ 
  Guess Validation
-![guess validation](docs/images/guess_validation.png)
+
+![guess validation](docs/testing/guess_validation.png)
+ 
  Incorrect Guesses
-![Incorrect Guess 1](docs/images/incorrect_guess1.png)
-![Incorrect Guess 2](docs/images/incorrect_guess2.png)
-![Incorrect Guess 3](docs/images/incorrect_guess3.png)
-![Incorrect Guess 4](docs/images/incorrect_guess4.png)
-![Incorrect Guess 5](docs/images/incorrect_guess5.png)
-![Incorrect Guess 6](docs/images/incorrect_guess6.png)
+
+![Incorrect Guess 1](docs/testing/incorrect_guess1.png)
+![Incorrect Guess 2](docs/testing/incorrect_guess2.png)
+![Incorrect Guess 3](docs/testing/incorrect_guess3.png)
+![Incorrect Guess 4](docs/testing/incorrect_guess4.png)
+![Incorrect Guess 5](docs/testing/incorrect_guess5.png)
+![Incorrect Guess 6](docs/testing/incorrect_guess6.png)
+
 Correct Guesses
+
 ![Correct Guess](docs/images/player_wins.png)
 
 </details>
