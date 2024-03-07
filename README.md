@@ -49,7 +49,7 @@ This programme is developed to demonstrate competency in python programming and 
 
 ## User Stories
 * As a user, I want clear guidance on how to play the game.
-* As a user, I want to be prompted when it's my turn to guess.
+* As a user, I want to be prompted when to guess.
 * As a user, I want the ability to enter letters to guess the hidden word.
 * As a user, I want feedback on my performance after each guess.
 * As a user, I want to be informed of the game's outcome (win, or lose).
@@ -65,12 +65,12 @@ This programme is developed to demonstrate competency in python programming and 
 * Ensure a single-page layout for straightforward navigation.
 * Offer ongoing feedback on performance throughout the game.
 * Provide a clear indication of the game's start and end.
-* Implement input validation to minimize errors.
+* Implement input validation.
 * Deliver feedback on the user's input throughout the game rounds.
 
 ### Expectations
-* I expect to know when the game starts and finishes
 * I expect to have the rules of the game explained to me 
+* I expect to know when the game starts and finishes
 * I expect input validation to ensure accurate letter guesses 
 * I expect to receive feedback on my accuracy in guessing letters
 * I expect to receive feedback on how many lives are remaining
@@ -124,7 +124,7 @@ The game was broken down into steps that would be required to navigate through t
 ![welcome screen](docs/images/welcome_screen.png)
 
 ### Input validation
-* The player input is validated. If the user does not enter either 'y' or 'n' they are prompted to enter a correct oprion.
+* The player input is validated. If the user does not enter either 'y' or 'n' they are prompted to enter a correct option.
 
 ![welcome screen validation](docs/images/welcome_validation.png)
 
@@ -134,7 +134,7 @@ The game was broken down into steps that would be required to navigate through t
 ![welcome screen goodbye](docs/images/welcome_goodbye.png)
 
 ### User selects 'y'
-* If the user eneters 'y' the game begins. 
+* If the user enters 'y' the game begins. 
 * The programme makes a call to the Google Spreadsheet where various words are saved. 
 * The programme randomly selects a word from a predefined list of words for the player to guess. 
 * The programmes displays a blank space for each letter in the word (e.g. '________').
@@ -196,7 +196,7 @@ The game was broken down into steps that would be required to navigate through t
 ## Player Wins
 
 * When the player guesses all letters in the word they have won and the game ends.
-* The completed word is displayed along with a message telling the user they have guessed teh word correctly and tehy have won teh game.
+* The completed word is displayed along with a message telling the user they have guessed the word correctly and they have won the game.
 
 ![Player wins](docs/images/player_wins.png)
 
@@ -206,6 +206,10 @@ The game was broken down into steps that would be required to navigate through t
 ![welcome screen](docs/images/welcome_screen.png)
 
 ## Future Features
+
+* Difficulty levels: Implement different difficulty levels (easy, medium, hard) with varying word lengths, timer or limited guesses for a more challenging experience.
+* Hint system: Allow players to use hints to reveal a letter in the word, at the cost of points or lives.
+* Theme selection: Provide different themes or categories for word selection (e.g., animals, countries, movies) to add variety to gameplay.
 
 \
 &nbsp;
