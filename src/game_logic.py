@@ -28,6 +28,7 @@ def select_random_word():
         print(f"An unexpected error occurred: {ex}")
         return None
 
+
 def get_letter_input(letters_guessed):
     """
     Prompts the user to enter a single letter and returns it in lowercase.
@@ -45,6 +46,7 @@ def get_letter_input(letters_guessed):
                 return user_input
         else:
             print("Invalid input. Please enter a single letter.")
+
 
 def user_wants_to_play_game():
     """
@@ -94,7 +96,8 @@ def display_guessed_letters(guessed_letters_list):
 
 def handle_incorrect_guess(num_lives, graphics, word_display):
     """
-     Handles an incorrect guess by displaying appropriate graphics and updating the number of lives.
+     Handles an incorrect guess by displaying appropriate
+     graphics and updating the number of lives.
     """
     if num_lives > 1:
         print(graphics[-num_lives])
@@ -108,7 +111,8 @@ def handle_incorrect_guess(num_lives, graphics, word_display):
 
 def check_if_player_wins(game_display, game_word):
     """
-    Checks if the player has won the game by comparing the displayed word with the actual word.
+    Checks if the player has won the game by comparing the displayed
+    word with the actual word.
     """
     if ''.join(game_display) == game_word:
         print('Congratulations. You guessed the word correctly. You win.')

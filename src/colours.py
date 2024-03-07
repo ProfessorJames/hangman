@@ -10,10 +10,9 @@ class Colours:
         'cyan': '\u001b[36m',
         'white': '\u001b[37m',
     }
-    
+
     @staticmethod
     def colourize(text, color):
         colour_code = Colours.COLOURS.get(color)
-        reset_code = '\u001b[0m'  
+        reset_code = '\u001b[0m'
         return colour_code + text + reset_code
-

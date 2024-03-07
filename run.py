@@ -4,9 +4,16 @@ from src.art import green_logo, GRAPHICS, display_logo, display_welcome_message
 from src.utils import pause, clear_console
 from src.google import SHEET
 from src.colours import Colours
-from src.game_logic import select_random_word, get_letter_input, user_wants_to_play_game 
-from src.game_logic import create_word_display, update_word_display, display_guessed_letters
-from src.game_logic import handle_incorrect_guess, handle_incorrect_guess, check_if_player_loses, check_if_player_wins
+from src.game_logic import (
+    select_random_word,
+    get_letter_input,
+    user_wants_to_play_game,
+    create_word_display,
+    update_word_display,
+    display_guessed_letters,
+    handle_incorrect_guess,
+    check_if_player_loses,
+    check_if_player_wins)
 
 
 def play_game():

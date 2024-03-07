@@ -1,6 +1,7 @@
 import time
 import os
 
+
 def pause(seconds):
     """
     Pauses the program execution for a specified duration in seconds.
