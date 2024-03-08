@@ -24,7 +24,7 @@ This command-line game is a fun and interactive way to test your vocabulary and 
       * [Win or Lose Conditions](#win-or-lose-conditions)
       * [Player Loses](#player-loses)
       * [Player Wins](#player-wins)
-  * [Feature Considerations](#future-features)
+  * [Feature Considerations](#feature-considerations)
 * [Flowchart](#flowchart)
 * [Data Model](#data-modelflowchart)
 * [Technologies Used](#technologies-used)
@@ -36,8 +36,12 @@ This command-line game is a fun and interactive way to test your vocabulary and 
    * [Automated Testing](#automated-testing)
       * [Code Validation](#code-validation)
 * [Bugs](#bugs)
-  - [Unfixed-Bugs](#unfixed-Bugs)
+  * [Solved Bugs](#solved-bugs)
 * [Deployment](#deployment)
+   * [Deploying the App](#deploying-the-app)
+   * [Forking Project](#forking-project)
+   * [Cloning Project](#cloning-project)
+   * [APIs](#apis)
 * [Credits](#credits)
 
 ## Purpose
@@ -392,8 +396,6 @@ Correct Guesses
 &nbsp;
 
 # Deployment
-
-## Deployment and Development
 
 * The project was developed using [Gitpod](https://www.gitpod.io/#get-started) to create the code and files required.
 * The project files, code, and information are hosted by [Github](https://github.com/).
