@@ -12,7 +12,7 @@ def select_random_word():
     it in lowercase.
     """
     try:
-        words = SHEET.worksheet('Words').get_all_values()
+        words = SHEET.worksheet('words').get_all_values()
         if words is None:
             raise ValueError
         word = random.choice(words)

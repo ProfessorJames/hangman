@@ -9,7 +9,7 @@ This command-line game is a fun and interactive way to test your vocabulary and 
 
 ## Table of Contents
 * [Purpose](#purpose)
-* [UX](#ux "UX")
+* [UX Design](#ux "UX")
     * [User Goals](#user-goals "User Goals")
     * [User Stories](#user-stories "User Stories")
     * [Site Owners Goals](#site-owners-goals)
@@ -20,11 +20,18 @@ This command-line game is a fun and interactive way to test your vocabulary and 
 * [Planning](#planning)
 * [Features](#features)
   * [Existing Features](#existing-features)
-  * [Incorrect Guess Tracking](#incorrect-guess-tracking)
+      * [Incorrect Guess Tracking](#incorrect-guess-tracking)
+      * [Win or Lose Conditions](#win-or-lose-conditions)
+      * [Player Loses](#player-loses)
+      * [Player Wins](#player-wins)
+  * [Feature Considerations](#future-features)
+* [Flowchart](#flowchart)
+* [Data Model](#data-modelflowchart)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
   * [Programs, frameworks, libraries](#programs-frameworks-libraries-and-tools)
 * [Testing](#testing)
+   * [Testing User Stories](#testing-user-stories)
    * [UX Testing](#ux-testing)
    * [Automated Testing](#automated-testing)
       * [Code Validation](#code-validation)
@@ -39,7 +46,7 @@ The purpose of this programme is to make an interactive Hangman CLI game for use
 
 This programme is developed to demonstrate competency in python programming and is for educational purposes.
 
-# UX
+# UX Design
 
 ## User Goals
 * Instructions on how to play the game.
@@ -117,6 +124,13 @@ The game was broken down into steps that would be required to navigate through t
 # Features
 
 ## Existing Features
+
+### Data Validation
+* All user input is validated throughout the programmep to ensure data in the correct format can be entered and accepted by the programme.
+
+### Google Spreadsheet
+Google Spreadsheet API is used to retrieve data for the app. There is one worksheet used to store data: "words".
+
 ### Welcome screen
 * When the game loads the player sees the Hangman logo. The logo has been created using ascii art, a welcome message and instructions on how to play the game are displayed.
 * The user is asked if they want to play Hangman and prompted to enter 'y' for Yes or 'n' for No.
@@ -149,8 +163,8 @@ The game was broken down into steps that would be required to navigate through t
 
 ### Guessing 
 * The player can guess letters one by one to reveal the hidden word.
-* If the letter guessed by the player is a letter in the word, the display be will be updated with occureneces of that letter. 
-* The programme will only accept a single alphanumeric character (a through z). 
+* If the letter guessed by the player is a letter in the word, the display be will be updated with occurences of that letter. 
+* The programme will only accept a single alphanumeric character (a through z, or A through Z). 
 * If the user doesn't enter a single alphanumeric character they will be asked to enter a single letter. 
 * If the user has already entered a letter in a previous guess, they will be asked to enter a new letter.
 * The letters that the user has guessed are displayed
@@ -179,12 +193,12 @@ The game was broken down into steps that would be required to navigate through t
 \
 &nbsp;
 
-# Win/Lose Conditions: 
+# Win or Lose Conditions: 
 * The game ends when the player either correctly guesses the word or makes too many incorrect guesses (hangman is fully drawn).
 
 ## Player Loses
 * When the player runs out of lives the game ends.
-* The completed hangman graphic is displayed along with a message telling thh user their letter chocie was incorrect and the game is over.
+* The completed hangman graphic is displayed along with a message telling the user their letter choice was incorrect and the game is over.
 
 ![incorrect guess six](docs/images/incorrect_guess6.png)
 
@@ -205,7 +219,7 @@ The game was broken down into steps that would be required to navigate through t
 
 ![welcome screen](docs/images/welcome_screen.png)
 
-## Future Features
+## Feature Considerations
 
 * Difficulty levels: Implement different difficulty levels (easy, medium, hard) with varying word lengths, timer or limited guesses for a more challenging experience.
 * Hint system: Allow players to use hints to reveal a letter in the word, at the cost of lives.
@@ -248,7 +262,6 @@ The game was broken down into steps that would be required to navigate through t
 
 ### Programs, frameworks, libraries and tools
 * [Drawio](https://app.diagrams.net/):  Used to create a flowchart during the planning stage 
-* [Python](https://www.python.org/): Used to provide functionality to the site.
 * [Google Drive](https://developers.google.com/drive): Used to process requests to a google sheet stored on google drive
 * [Google Sheets](https://www.google.com/sheets/about/): Used to host application data.
 * [Gitpod](https://www.gitpod.io): Used to create the code and content for the repository.
@@ -339,6 +352,8 @@ Correct Guesses
 </details>
 
 ## Automated testing
+
+### Code Validation
 **[PEP 8](https://pep8ci.herokuapp.com//) - Python Validation**
 * All custom python files were run through the Code Institute PEP8 validator. 
 * No errors were detected.
@@ -367,7 +382,7 @@ Correct Guesses
 * During development, an issue arose where the display was showing one more blank space than the actual number of letters in the word to be guessed. Initially, this issue was fixed by updating the range to be one less than the length of the word. However, this was an incorrect approach which was revealed during testing. Subsequently the code was refactored and the error was removed. 
 * During development, it was noticed that a user could enter the same letter more than once when attempting to guess the word. To improve the user experience and prevent duplicate guesses, the input function has been updated. Now, a letter can only be guessed by the user once, ensuring a smoother gameplay flow. If the user enters a duplicate letter, they are prompted to guess a new letter. A message is displayed asking them to input a different letter.
 * An error was encountered occasionally, with the message: "File 'run.py', line 138, in play_game, print(GRAPHICS[counter]), IndexError: list index out of range." This error likely occurred due to the counter variable incrementing incorrectly when the same letter was picked multiple times. To address this, the code has been refactored to eliminate the need for a counter variable. This modification ensures smoother gameplay, especially when a player selects a letter they have already chosen.
-* There was an issue with the check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic is displayed.
+* There was an issue with the check_if_player_loses function. If a player ran out of lives and lost the game the incorrect graphic was being displayed. The code was updated so that if a user runs out of lives the last item in the GRAPHICS array is displayed (the completed hangman). This way when a player runs out of lives and the game is over the correct graphic will always be displayed.
 * When the app was deployed on Heroku, an error message occasionally appeared indicating that the logo file contained incorrect escape characters. This error stemmed from the backslash (" \\ ") characters used in the Hangman logo within the art.py file. To resolve this issue, the backslashes were appropriately escaped within the Hangman logo string, ensuring that Python interpreted them as literal characters rather than escape characters.
 
 \
@@ -459,7 +474,7 @@ I followed the steps in a video from the [Code Institute](https://codeinstitute.
 ## Code
 - Information on Python3 [Python Documentation](https://docs.python.org/3/).
 - Information on Google Spreadsheet API was sourced from [Gspread Documentation](https://docs.gspread.org/en/latest/index.html).
-- Inffo on Regex pattern to identify only single character entered by user: [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
+- Information on Regex pattern to identify only single character entered by user was sourced from [Regex pattern](https://bobbyhadz.com/blog/python-input-only-accept-one-character)
 
 \
 &nbsp;
